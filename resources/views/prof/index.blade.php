@@ -2,6 +2,7 @@
 
 @section('content')
 
+
     <div class="container-fluid">
         <div class="row bg-title">
             <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
@@ -20,7 +21,7 @@
                         <li>
                             <div id="sparklinedash"></div>
                         </li>
-                        <li class="text-right"><i class="ti-arrow-up text-success"></i> <span class="counter text-success">7</span></li>
+                        <li class="text-right"><i class="ti-arrow-up text-success"></i> <span class="counter text-success">{{ count($dados['alunos']) }}</span></li>
                     </ul>
                 </div>
             </div>
@@ -31,7 +32,7 @@
                         <li>
                             <div id="sparklinedash2"></div>
                         </li>
-                        <li class="text-right"><i class="ti-arrow-up text-purple"></i> <span class="counter text-purple">20</span></li>
+                        <li class="text-right"><i class="ti-arrow-up text-purple"></i> <span class="counter text-purple">{{ count($dados['fichas_ativas']) }}</span></li>
                     </ul>
                 </div>
             </div>
@@ -42,7 +43,7 @@
                         <li>
                             <div id="sparklinedash3"></div>
                         </li>
-                        <li class="text-right"><i class="ti-arrow-up text-info"></i> <span class="counter text-info">15</span></li>
+                        <li class="text-right"><i class="ti-arrow-up text-info"></i> <span class="counter text-info">{{ $dados['exercicios'] }}</span></li>
                     </ul>
                 </div>
             </div>

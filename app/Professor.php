@@ -32,6 +32,11 @@ class Professor extends Model
 
     }
 
+    public function grupos() {
+
+        return $this->hasMany('App\Grupo');
+    }
+
     public function academia() {
 
         return $this->belongsTo('App\Academia', 'local_treino_id');
