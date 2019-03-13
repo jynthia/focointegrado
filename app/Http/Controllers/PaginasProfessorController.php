@@ -17,6 +17,9 @@ class PaginasProfessorController extends Controller
         $exercicios = Exercicio::all()->count();
         $grupos = $professor->grupos;
         $modalidades = Modalidade::all();
+
+//        TODO: falta inserir uma função no controller para carregar a frequencia do aluno e se a ficha está ativa ou nao
+
         $dados = array(
 
             'professor' => $professor,

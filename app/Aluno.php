@@ -53,7 +53,10 @@ class Aluno extends Model
 
     public function modalidade() {
 
-        return $this->belongsTo('App\Modalidade');
+        if($this->modalidade_id != NULL)
+            return $this->belongsTo('App\Modalidade')->first()->nome;
+        else
+            return 'Não cadastrado';
 
     }
 

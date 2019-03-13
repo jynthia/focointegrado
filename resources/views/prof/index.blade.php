@@ -167,8 +167,11 @@
                     </div>
                     <div class="col-md-3 col-sm-4 col-xs-6 pull-right">
                         <select class="form-control pull-right row b-none">
-                            <option>Todos</option>
-                            <option>Kids</option>
+
+                            @foreach($dados['modalidades'] as $modalidade)
+                                <option>{{$modalidade->nome}}</option>
+                            @endforeach
+
                         </select>
                     </div>
                     <h3 class="box-title">Carteira de Alunos</h3>
@@ -188,18 +191,18 @@
                             <tbody>
 
                             <!-- TODO: adicionar links e espaço entre ações -->
-                            <tr data-toggle="collapse" data-target="#accordionHistorico" class="clickable">
-                                <td><div class='editable' onclick='makeElementEditable(this)'
-                                         onblur='updateTaskName(this)'>1</div></td>
-                                <td class="txt-oflo"><div class='editable' onclick='makeElementEditable(this)'
-                                                          onblur='updateTaskName(this)'>Cinthia Campos</div></td>
-                                <td><div class='editable' onclick='makeElementEditable(this)'
-                                         onblur='updateTaskName(this)'>Fit</div></td>
-                                <td class="text-success">95%</td>
-                                <td>123456</td>
-                                <td class="text-danger">Pendente</td>
-                                <td><i class="fa fa-edit"></i><i class="fa fa-trash"></i></td>
-                            </tr>
+
+                            @foreach($dados['alunos'] as $aluno)
+                                <tr data-toggle="collapse" data-target="#accordionHistorico" class="clickable">
+                                    <td>{{$aluno->id}}</td>
+                                    <td class="txt-oflo">{{$aluno->nome}}</td>
+                                    <td class="txt-oflo">{{$aluno->modalidade()}}</td>
+                                    <td class="text-success"></td>
+                                    <td>{{$aluno->matricula}}</td>
+                                    <td class="text-danger"></td>
+                                    <td><i class="fa fa-edit"></i><i class="fa fa-trash"></i></td>
+                                </tr>
+                            @endforeach
 
                             <tr>
                                 <td colspan="7">
