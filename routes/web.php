@@ -15,7 +15,7 @@ Route::get('/login', 'PaginasController@getLogin');
 
 Route::get('/prof/', 'PaginasProfessorController@getIndex');
 
-Route::get('/prof/avaliacoes', 'PaginasProfessorController@getAvaliacoes');
+Route::get('/prof/atratores', 'PaginasProfessorController@getAtratores');
 
 Route::get('/prof/bioimpedancia', 'PaginasProfessorController@getBioimpedancia');
 

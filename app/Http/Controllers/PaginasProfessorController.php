@@ -28,13 +28,22 @@ class PaginasProfessorController extends Controller
 
     public function getPerfil() {
 
-        return view('prof.perfil');
+        $professor = Professor::find(7);
+        $usuario = $professor->usuario;
+
+        $dados = array(
+
+            'professor' => $professor,
+            'usuario' => $usuario
+        );
+
+        return view('prof.perfil')->withDados($dados);
 
     }
 
-    public function getAvaliacoes() {
+    public function getAtratores() {
 
-        return view('prof.avaliacoes');
+        return view('prof.atratores');
 
     }
 

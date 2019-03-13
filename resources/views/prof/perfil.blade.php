@@ -24,8 +24,8 @@
 
                                 <!-- TODO: add Modal para trocar de foto -->
                                 <a href="javascript:void(0)"><img src="img/profile.jpg" class="thumb-lg img-circle" alt="img"></a>
-                                <h4 class="text-white">Cinthia Campos</h4>
-                                <h5 class="text-white">cinthialgs@gmail.com</h5> </div>
+                                <h4 class="text-white">{{ $dados['professor']->nome }}</h4>
+                                <h5 class="text-white">{{ $dados['professor']->email }}</h5> </div>
                         </div>
                     </div>
 
@@ -37,22 +37,22 @@
                         <div class="form-group">
                             <label class="col-md-12">Nome Completo</label>
                             <div class="col-md-12">
-                                <input type="text" placeholder="Cinthia Lages" class="form-control form-control-line"> </div>
+                                <input type="text" value="{{ $dados['professor']->nome }}" class="form-control form-control-line"> </div>
                         </div>
                         <div class="form-group">
                             <label for="example-email" class="col-md-12">E-mail</label>
                             <div class="col-md-12">
-                                <input type="email" placeholder="cinthialgs@gmail.com" class="form-control form-control-line" name="example-email" id="example-email"> </div>
+                                <input type="email" value="{{ $dados['professor']->email }}" class="form-control form-control-line" name="example-email" id="example-email"> </div>
                         </div>
                         <div class="form-group">
                             <label class="col-md-12">Senha</label>
                             <div class="col-md-12">
-                                <input type="password" value="password" class="form-control form-control-line"> </div>
+                                <input type="password" value="{{ $dados['usuario']->senha }}" class="form-control form-control-line"> </div>
                         </div>
                         <div class="form-group">
-                            <label class="col-md-12">Telefone ação</label>
+                            <label class="col-md-12">Login</label>
                             <div class="col-md-12">
-                                <input type="text" placeholder="(086)994058612" class="form-control form-control-line"> </div>
+                                <input type="text" value="{{ $dados['usuario']->login }}" class="form-control form-control-line"> </div>
                         </div>
                         <div class="form-group">
                             <div class="col-sm-12">
