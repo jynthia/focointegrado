@@ -12,3 +12,5 @@
 */
 
 Route::get('/login', 'PaginasController@getLogin');
+
+

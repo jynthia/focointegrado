@@ -10,7 +10,8 @@ class PaginasController extends Controller
 
     public function getLogin() {
 
-        return 'cebruthius';
+        return view('login');
 
     }
+
 }
