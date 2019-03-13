@@ -202,92 +202,93 @@
                                     <td class="text-danger"></td>
                                     <td><i class="fa fa-edit"></i><i class="fa fa-trash"></i></td>
                                 </tr>
+
+                                <tr>
+                                    <td colspan="7">
+                                        <div id="accordionHistorico" class="collapse">
+                                            <h4>Histórico</h4>
+                                            <table class="table">
+                                                <tr>
+                                                    <td><p>Local de treino: <span class="text-dark">{{$aluno->academia()}}</span></p></td>
+                                                    <td><p>Data de nascimento: <span class="text-dark">{{$aluno->nascimento}}</span></p></td>
+                                                </tr>
+                                                <tr>
+                                                    <td><p>Idade: <span class="text-dark">{{$aluno->idade}}</span></p></td>
+                                                    <td><p>Gênero: <span class="text-dark">{{$aluno->genero()}}</span></p></td>
+                                                </tr>
+                                                <tr>
+                                                    <td><p>Estado Civil: <span class="text-dark">{{$aluno->estado_civil}}</span></p></td>
+                                                    <td><p>Contato: <span class="text-dark">{{$aluno->contato}}</span></p></td>
+                                                </tr>
+                                                <tr>
+                                                    <td><p>E-mail: <span class="text-dark">{{$aluno->email}}</span></p></td>
+                                                    <td><p>Profissão: <span class="text-dark">{{$aluno->profissao}}</span></p></td>
+                                                </tr>
+                                                <tr>
+                                                    <td><p>CPF: <span class="text-dark">{{$aluno->cpf}}</span></p></td>
+                                                    <td><p>Estado Civil: <span class="text-dark">Lorem Ipsum</span></p></td>
+                                                </tr>
+                                                <tr>
+                                                    <td><p>Endereço: <span class="text-dark">Lorem Ipsum</span></p></td>
+                                                    <td><p>Gênero: <span class="text-dark">Lorem Ipsum</span></p></td>
+                                                </tr>
+                                                <tr>
+                                                    <td colspan="2"><p>Objetivo: <span class="text-dark">Lorem Ipsum</span></p></td>
+                                                </tr>
+                                                <tr>
+                                                    <td colspan="2"><p>Atividades atuais: <span class="text-dark">Lorem Ipsum</span></p></td>
+                                                </tr>
+                                                <tr>
+                                                    <td colspan="2"><p>Dores na coluna: <span class="text-dark">Lorem Ipsum</span></p></td>
+                                                </tr>
+                                                <tr>
+                                                    <td colspan="2"><p>Limitações ou lesão passada: <span class="text-dark">Lorem Ipsum</span></p></td>
+                                                </tr>
+                                                <tr>
+                                                    <td colspan="2"><p>Escala de dor 1 a 10: <span class="text-dark">Lorem Ipsum</span></p></td>
+                                                </tr>
+                                                <tr>
+                                                    <td colspan="2"><p>Medicamento atual: <span class="text-dark">Lorem Ipsum</span></p></td>
+                                                </tr>
+                                                <tr>
+                                                    <td colspan="2"><p>Alguma cirurgia recente: <span class="text-dark">Lorem Ipsum</span></p></td>
+                                                </tr>
+                                                <tr>
+                                                    <td colspan="2"><p>Problema de saúde: <span class="text-dark">Lorem Ipsum</span></p></td>
+                                                </tr>
+                                            </table>
+                                            <h4>Horário</h4>
+                                            <table class="table">
+
+                                                <thead>
+                                                <tr>
+                                                    <th>Acordar:</th>
+                                                    <th>Trabalho:</th>
+                                                    <th>Estudo:</th>
+                                                    <th>Treino:</th>
+                                                    <th>Dormir:</th>
+                                                </tr>
+                                                </thead>
+                                                <tbody>
+                                                <tr>
+                                                    <td>12h</td>
+                                                    <td>12h</td>
+                                                    <td>12h</td>
+                                                    <td>12h</td>
+                                                    <td>12h</td>
+                                                </tr>
+                                                </tbody>
+                                            </table>
+
+                                            <h4>Relatório de Movimento/Planejamento Base/IT Iluminator</h4>
+                                            <p>ajhdisuhdiufhisshfi</p>
+
+
+                                        </div>
+                                    </td>
+                                </tr>
+
                             @endforeach
-
-                            <tr>
-                                <td colspan="7">
-                                    <div id="accordionHistorico" class="collapse">
-                                        <h4>Histórico</h4>
-                                        <table class="table">
-                                            <tr>
-                                                <td><p>Local de treino: <span class="text-dark">{{$aluno->academia()}}</span></p></td>
-                                                <td><p>Data de nascimento: <span class="text-dark">{{$aluno->nascimento}}</span></p></td>
-                                            </tr>
-                                            <tr>
-                                                <td><p>Idade: <span class="text-dark">{{$aluno->idade}}</span></p></td>
-                                                <td><p>Gênero: <span class="text-dark">Lorem Ipsum</span></p></td>
-                                            </tr>
-                                            <tr>
-                                                <td><p>Estado Civil: <span class="text-dark">Lorem Ipsum</span></p></td>
-                                                <td><p>Contato: <span class="text-dark">Lorem Ipsum</span></p></td>
-                                            </tr>
-                                            <tr>
-                                                <td><p>E-mail: <span class="text-dark">Lorem Ipsum</span></p></td>
-                                                <td><p>Profissão: <span class="text-dark">Lorem Ipsum</span></p></td>
-                                            </tr>
-                                            <tr>
-                                                <td><p>CPF: <span class="text-dark">Lorem Ipsum</span></p></td>
-                                                <td><p>Estado Civil: <span class="text-dark">Lorem Ipsum</span></p></td>
-                                            </tr>
-                                            <tr>
-                                                <td><p>Endereço: <span class="text-dark">Lorem Ipsum</span></p></td>
-                                                <td><p>Gênero: <span class="text-dark">Lorem Ipsum</span></p></td>
-                                            </tr>
-                                            <tr>
-                                                <td colspan="2"><p>Objetivo: <span class="text-dark">Lorem Ipsum</span></p></td>
-                                            </tr>
-                                            <tr>
-                                                <td colspan="2"><p>Atividades atuais: <span class="text-dark">Lorem Ipsum</span></p></td>
-                                            </tr>
-                                            <tr>
-                                                <td colspan="2"><p>Dores na coluna: <span class="text-dark">Lorem Ipsum</span></p></td>
-                                            </tr>
-                                            <tr>
-                                                <td colspan="2"><p>Limitações ou lesão passada: <span class="text-dark">Lorem Ipsum</span></p></td>
-                                            </tr>
-                                            <tr>
-                                                <td colspan="2"><p>Escala de dor 1 a 10: <span class="text-dark">Lorem Ipsum</span></p></td>
-                                            </tr>
-                                            <tr>
-                                                <td colspan="2"><p>Medicamento atual: <span class="text-dark">Lorem Ipsum</span></p></td>
-                                            </tr>
-                                            <tr>
-                                                <td colspan="2"><p>Alguma cirurgia recente: <span class="text-dark">Lorem Ipsum</span></p></td>
-                                            </tr>
-                                            <tr>
-                                                <td colspan="2"><p>Problema de saúde: <span class="text-dark">Lorem Ipsum</span></p></td>
-                                            </tr>
-                                        </table>
-                                        <h4>Horário</h4>
-                                        <table class="table">
-
-                                            <thead>
-                                            <tr>
-                                                <th>Acordar:</th>
-                                                <th>Trabalho:</th>
-                                                <th>Estudo:</th>
-                                                <th>Treino:</th>
-                                                <th>Dormir:</th>
-                                            </tr>
-                                            </thead>
-                                            <tbody>
-                                            <tr>
-                                                <td>12h</td>
-                                                <td>12h</td>
-                                                <td>12h</td>
-                                                <td>12h</td>
-                                                <td>12h</td>
-                                            </tr>
-                                            </tbody>
-                                        </table>
-
-                                        <h4>Relatório de Movimento/Planejamento Base/IT Iluminator</h4>
-                                        <p>ajhdisuhdiufhisshfi</p>
-
-
-                                    </div>
-                                </td>
-                            </tr>
                             </tbody>
                         </table>
                     </div>

@@ -25,6 +25,7 @@ class Aluno extends Model
         'endereco',
         'estado_civil',
         'idade',
+        'profissao',
         'local_treino_id',
         'genero_id',
         'modalidade_id',
