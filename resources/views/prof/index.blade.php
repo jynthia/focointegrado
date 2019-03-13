@@ -210,12 +210,12 @@
                                         <h4>Histórico</h4>
                                         <table class="table">
                                             <tr>
-                                                <td><p>Local de treino: <span class="text-dark">Prevenção / Habilidade Motora</span></p></td>
-                                                <td><p>Data de nascimento: <span class="text-dark">Lorem Ipsum</span></p></td>
+                                                <td><p>Local de treino: <span class="text-dark">{{$aluno->academia()}}</span></p></td>
+                                                <td><p>Data de nascimento: <span class="text-dark">{{$aluno->nascimento}}</span></p></td>
                                             </tr>
                                             <tr>
-                                                <td><p>Idade: <span class="text-dark">Lorem Ipsum</span></p></td>
-                                                <td><p>Sexo: <span class="text-dark">Lorem Ipsum</span></p></td>
+                                                <td><p>Idade: <span class="text-dark">{{$aluno->idade}}</span></p></td>
+                                                <td><p>Gênero: <span class="text-dark">Lorem Ipsum</span></p></td>
                                             </tr>
                                             <tr>
                                                 <td><p>Estado Civil: <span class="text-dark">Lorem Ipsum</span></p></td>

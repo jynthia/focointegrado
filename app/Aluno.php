@@ -41,13 +41,13 @@ class Aluno extends Model
 
     public function academia() {
 
-        return $this->belongsTo('App\Academia', 'local_treino_id');
+        return $this->belongsTo('App\Academia', 'local_treino_id')->first()->nome;
 
     }
 
     public function genero() {
 
-        return $this->belongsTo('App\Genero');
+        return $this->belongsTo('App\Genero')->first()->nome;
 
     }
 
