@@ -13,4 +13,18 @@
 
 Route::get('/login', 'PaginasController@getLogin');
 
+Route::get('/prof/', 'PaginasProfessorController@getIndex');
+
+Route::get('/prof/avaliacoes', 'PaginasProfessorController@getAvaliacoes');
+
+Route::get('/prof/bioimpedancia', 'PaginasProfessorController@getBioimpedancia');
+
+Route::get('/prof/exercicios', 'PaginasProfessorController@getExercicios');
+
+Route::get('/prof/fichas', 'PaginasProfessorController@getFichas');
+
+Route::get('/prof/fichas_grupo', 'PaginasProfessorController@getFichasGrupo');
+
+Route::get('/prof/perfil', 'PaginasProfessorController@getPerfil');
+
 
