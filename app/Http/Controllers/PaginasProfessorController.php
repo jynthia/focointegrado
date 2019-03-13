@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Professor;
 use App\Exercicio;
+use App\Modalidade;
 
 class PaginasProfessorController extends Controller
 {
@@ -15,12 +16,14 @@ class PaginasProfessorController extends Controller
         $alunos = $professor->alunos;
         $exercicios = Exercicio::all()->count();
         $grupos = $professor->grupos;
+        $modalidades = Modalidade::all();
         $dados = array(
 
             'professor' => $professor,
             'fichas_ativas' => $fichas_ativas,
             'alunos' => $alunos,
-            'exercicios' => $exercicios
+            'exercicios' => $exercicios,
+            'modalidades' => $modalidades
         );
         return view('prof.index')->withDados($dados);
 
