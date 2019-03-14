@@ -47,7 +47,11 @@
                                             <label for="aluno_id" class="control-label">Aluno</label>
                                             <select class="form-control" id="aluno_id" name="aluno">
 
-                                                <option value="1">Cinthia Campos</option>
+                                                @foreach($dados['alunos'] as $aluno)
+
+                                                    <option value="{{$aluno->id}}">{{$aluno->nome}}</option>
+
+                                                @endforeach
 
                                             </select>
                                         </div>
@@ -79,8 +83,12 @@
 
                     <div class="col-md-3 col-sm-4 col-xs-6 pull-right">
                         <select class="form-control pull-right row b-none">
-                            <option>Todos os alunos</option>
-                            <option>Cinthia Campos</option>
+                            <option value="0">Todos os alunos</option>
+
+                            @foreach($dados['alunos'] as $aluno)
+                                <option value="{{$aluno->id}}">{{$aluno->nome}}</option>
+                            @endforeach
+
                         </select>
                     </div>
                     <h3 class="box-title">Fichas cadastradas</h3>
@@ -100,133 +108,139 @@
 
                             <!-- TODO: adicionar links e espaço entre ações -->
 
-                            <tr data-toggle="collapse" data-target="#accordion" class="clickable">
-                                <td>1</td>
-                                <td class="txt-oflo">Março 2019</td>
-                                <td>Cinthia Campos</td>
-                                <td>12/01/2019</td>
-                                <td class="text-danger">12/01/2019</td>
-                                <td><i class="fa fa-edit"></i><i class="fa fa-trash"></i></td>
-                            </tr>
+                            @foreach($dados['fichas'] as $ficha)
 
-                            <tr>
-                                <td colspan="6">
-                                    <div id="accordion" class="collapse">
-                                        <button type="button" data-toggle="modal" data-target="#myModalTreino" class="btn btn-success pull-right m-l-20 hidden-xs hidden-sm waves-effect waves-light"><i class="fa fa-plus fa-fw" aria-hidden="true"></i>Adicionar treino</button>
+                                <tr data-toggle="collapse" data-target="#accordion" class="clickable">
+                                    <td>{{$ficha->id}}</td>
+                                    <td class="txt-oflo">{{$ficha->nome}}</td>
+                                    {{--<td>{{$ficha->aluno()}}</td>--}}
+                                    {{--<td>{{$ficha->data_inserida}}</td>--}}
+                                    {{--<td class="text-danger">{{$ficha->data_vencimento}}</td>--}}
+                                    {{--<td><i class="fa fa-edit"></i><i class="fa fa-trash"></i></td>--}}
+                                </tr>
 
-                                        <div id="myModalTreino" class="modal fade" role="dialog">
+                                <tr>
+                                    <td colspan="6">
+                                        <div id="accordion" class="collapse">
+                                            <button type="button" data-toggle="modal" data-target="#myModalTreino" class="btn btn-success pull-right m-l-20 hidden-xs hidden-sm waves-effect waves-light"><i class="fa fa-plus fa-fw" aria-hidden="true"></i>Adicionar Treino</button>
 
-                                            <div class="modal-dialog">
+                                            <div id="myModalTreino" class="modal fade" role="dialog">
 
-                                                <div class="modal-content">
+                                                <div class="modal-dialog">
 
-                                                    <div class="modal-header">
+                                                    <div class="modal-content">
 
-                                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                                        <h4 class="modal-title">Adicionar treino</h4>
+                                                        <div class="modal-header">
 
-                                                    </div>
+                                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                            <h4 class="modal-title">Adicionar Treino</h4>
 
-                                                    <div class="modal-body">
+                                                        </div>
 
-                                                        <form id="adicionaTreino" method="post" action="">
+                                                        <div class="modal-body">
 
-                                                            <div class="form-group">
-                                                                <label for="nome_treino" class="control-label">Nome</label>
-                                                                <input type="text" class="form-control" id="nome_treino" name="nome_treino" placeholder="Ex.: Treino A">
-                                                            </div>
+                                                            <form id="adicionaTreino" method="post" action="">
 
-                                                            <div class="form-group">
-                                                                <label for="warmup" class="control-label">Warm-up</label>
-                                                                <input type="text" class="form-control" id="warmup" name="warmup" placeholder="">
-                                                            </div>
+                                                                <div class="form-group">
+                                                                    <label for="nome_treino" class="control-label">Nome</label>
+                                                                    <input type="text" class="form-control" id="nome_treino" name="nome_treino" placeholder="Ex.: Treino A">
+                                                                </div>
 
-                                                            <div class="form-group">
+                                                                <div class="form-group">
+                                                                    <label for="warmup" class="control-label">Warm-up</label>
+                                                                    <input type="text" class="form-control" id="warmup" name="warmup" placeholder="">
+                                                                </div>
 
-                                                                <label for="exercicio" class="control-label">Selecione exercício</label>
-                                                                <select class="form-control" id="exercicio" name="exercicio">
+                                                                <div class="form-group">
 
-                                                                    <option value="1">Lorem ipsum</option>
+                                                                    <label for="exercicio" class="control-label">Selecione exercício</label>
+                                                                    <select class="form-control" id="exercicio" name="exercicio">
 
-                                                                </select>
-                                                            </div>
+                                                                        @foreach($dados['exercicios'] as $exercicio)
+                                                                            <option value="{{$exercicio->id}}">{{$exercicio->nome}}</option>
+                                                                        @endforeach
 
-                                                            <div class="form-group">
-                                                                <label for="sets" class="control-label">Sets</label>
-                                                                <input type="text" class="form-control" id="sets" name="sets" placeholder="">
-                                                            </div>
+                                                                    </select>
+                                                                </div>
 
-                                                            <div class="form-group">
-                                                                <label for="reps" class="control-label">Reps</label>
-                                                                <input type="text" class="form-control" id="reps" name="reps" placeholder="">
-                                                            </div>
+                                                                <div class="form-group">
+                                                                    <label for="sets" class="control-label">Sets</label>
+                                                                    <input type="text" class="form-control" id="sets" name="sets" placeholder="">
+                                                                </div>
 
-                                                            <div class="form-group">
-                                                                <label for="rest" class="control-label">Rest</label>
-                                                                <input type="text" class="form-control" id="rest" name="rest" placeholder="">
-                                                            </div>
+                                                                <div class="form-group">
+                                                                    <label for="reps" class="control-label">Reps</label>
+                                                                    <input type="text" class="form-control" id="reps" name="reps" placeholder="">
+                                                                </div>
+
+                                                                <div class="form-group">
+                                                                    <label for="rest" class="control-label">Rest</label>
+                                                                    <input type="text" class="form-control" id="rest" name="rest" placeholder="">
+                                                                </div>
 
 
-                                                        </form>
+                                                            </form>
 
-                                                    </div>
+                                                        </div>
 
-                                                    <div class="modal-footer form-group">
+                                                        <div class="modal-footer form-group">
 
-                                                        <button type="submit" class="btn btn-info" data-dismiss="modal">Adicionar</button>
+                                                            <button type="submit" class="btn btn-info" data-dismiss="modal">Adicionar</button>
+
+                                                        </div>
 
                                                     </div>
 
                                                 </div>
 
                                             </div>
-
+                                            <h4>TREINO A</h4>
+                                            <p>Titulo: <span class="text-dark">Prevenção / Habilidade Motora</span></p>
+                                            <p>Warm-up: <span class="text-dark">Lorem Ipsum</span></p>
+                                            <table class="table">
+                                                <thead>
+                                                <tr>
+                                                    <th class="text-dark">Exercício</th>
+                                                    <th class="text-dark">Sets</th>
+                                                    <th class="text-dark">Reps</th>
+                                                    <th class="text-dark">Rest</th>
+                                                </tr>
+                                                </thead>
+                                                <tbody>
+                                                <tr>
+                                                    <td>Elevação de quadril</td>
+                                                    <td>3</td>
+                                                    <td>3</td>
+                                                    <td>30</td>
+                                                </tr>
+                                                </tbody>
+                                            </table>
+                                            <h4>TREINO B</h4>
+                                            <p>Titulo: <span class="text-dark">Prevenção / Habilidade Motora</span></p>
+                                            <p>Warm-up: <span class="text-dark">Lorem Ipsum</span></p>
+                                            <table class="table">
+                                                <thead>
+                                                <tr>
+                                                    <th class="text-dark">Exercício</th>
+                                                    <th class="text-dark">Sets</th>
+                                                    <th class="text-dark">Reps</th>
+                                                    <th class="text-dark">Rest</th>
+                                                </tr>
+                                                </thead>
+                                                <tbody>
+                                                <tr>
+                                                    <td>Elevação de quadril</td>
+                                                    <td>3</td>
+                                                    <td>3</td>
+                                                    <td>30</td>
+                                                </tr>
+                                                </tbody>
+                                            </table>
                                         </div>
-                                        <h4>TREINO A</h4>
-                                        <p>Titulo: <span class="text-dark">Prevenção / Habilidade Motora</span></p>
-                                        <p>Warm-up: <span class="text-dark">Lorem Ipsum</span></p>
-                                        <table class="table">
-                                            <thead>
-                                            <tr>
-                                                <th class="text-dark">Exercício</th>
-                                                <th class="text-dark">Sets</th>
-                                                <th class="text-dark">Reps</th>
-                                                <th class="text-dark">Rest</th>
-                                            </tr>
-                                            </thead>
-                                            <tbody>
-                                            <tr>
-                                                <td>Elevação de quadril</td>
-                                                <td>3</td>
-                                                <td>3</td>
-                                                <td>30</td>
-                                            </tr>
-                                            </tbody>
-                                        </table>
-                                        <h4>TREINO B</h4>
-                                        <p>Titulo: <span class="text-dark">Prevenção / Habilidade Motora</span></p>
-                                        <p>Warm-up: <span class="text-dark">Lorem Ipsum</span></p>
-                                        <table class="table">
-                                            <thead>
-                                            <tr>
-                                                <th class="text-dark">Exercício</th>
-                                                <th class="text-dark">Sets</th>
-                                                <th class="text-dark">Reps</th>
-                                                <th class="text-dark">Rest</th>
-                                            </tr>
-                                            </thead>
-                                            <tbody>
-                                            <tr>
-                                                <td>Elevação de quadril</td>
-                                                <td>3</td>
-                                                <td>3</td>
-                                                <td>30</td>
-                                            </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </td>
-                            </tr>
+                                    </td>
+                                </tr>
+
+                                @endforeach
 
                             </tbody>
                         </table>

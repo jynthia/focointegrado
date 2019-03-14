@@ -2,17 +2,16 @@
 
 namespace App\Http\Controllers;
 
-use App\AvaliacaoAluno;
 use Illuminate\Http\Request;
 use App\Professor;
 use App\Exercicio;
 use App\Modalidade;
-use App\HorarioAluno;
 use App\Academia;
 use App\Atratores;
 use App\Genero;
 use App\Bioimpedancia;
-
+use App\TreinoBase;
+use App\Ficha;
 
 class PaginasProfessorController extends Controller
 {
@@ -96,14 +95,37 @@ class PaginasProfessorController extends Controller
     }
 
     public function getFichas() {
+        $professor = Professor::find(7);
+        $alunos = $professor->alunos;
+        $fichas_aluno = Ficha::where('cadastrado_por', $professor->usuario_id)->where('grupo_id', NULL)->orderBy('created_at', 'desc')->get();
+        $exercicios = Exercicio::all();
 
-        return view('prof.fichas');
+        $dados = array(
+
+            'titulo' => 'Fichas de Treino - Alunos',
+            'alunos' => $alunos,
+            'fichas' => $fichas_aluno,
+            'exercicios' => $exercicios
+
+        );
+        return view('prof.fichas')->withDados($dados);
 
     }
 
     public function getFichasGrupo() {
+        $professor = Professor::find(7);
+        $grupos = $professor->grupos;
+        $exercicios = Exercicio::all();
 
-        return view('prof.fichas_grupo');
+        $dados = array(
+
+            'titulo' => 'Fichas de Treino - Grupos',
+            'grupos' => $grupos,
+            'exercicios' => $exercicios
+
+        );
+
+        return view('prof.fichas_grupo')->withDados($dados);
 
     }
 

@@ -17,20 +17,10 @@ class TreinoBase extends Model
     protected $fillable = [
 
         'nome',
-        'data_inserida',
-        'data_vencimento',
-        'modalidade_id',
-        'grupo_id',
         'cadastrado_por',
-        'aluno_id'
+        'ficha_id'
 
     ];
-
-    public function modalidade() {
-
-        return $this->belongsTo('App\Modalidade')->first()->nome;
-
-    }
 
     public function cadastradoPor() {
 
@@ -38,31 +28,13 @@ class TreinoBase extends Model
 
     }
 
-    public function isGrupo() {
-
-        if($this->grupo_id == NULL) {
-
-            return false;
-        }
-        return true;
-
-    }
-
-    public function destinatario() {
-
-        if($this->aluno_id) {
-
-            return $this->belongsTo('App\Aluno', 'aluno_id')->first()->nome;
-
-        }
-        $horario = $this->belongsTo('App\Grupo', 'grupo_id')->first()->horario;
-        $modal = $this->modalidade();
-        return "Grupo $modal - $horario";
-
-    }
-
     public function series() {
 
         return $this->hasMany('App\Serie', 'treino_id');
+    }
+
+    public function ficha() {
+
+        return $this->hasOne('App\Ficha', 'ficha_id');
     }
 }
