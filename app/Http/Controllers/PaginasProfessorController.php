@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\ExercicioSerie;
 use Illuminate\Http\Request;
 use App\Professor;
 use App\Exercicio;
@@ -99,6 +100,7 @@ class PaginasProfessorController extends Controller
         $alunos = $professor->alunos;
         $fichas_aluno = Ficha::where('cadastrado_por', $professor->usuario_id)->where('grupo_id', NULL)->orderBy('created_at', 'desc')->get();
         $exercicios = Exercicio::all();
+
 
         $dados = array(
 

@@ -29,7 +29,7 @@ class Ficha extends Model
 
     public function treinos() {
 
-        return $this->hasMany('App\TreinoBase', 'ficha_id');
+        return $this->hasMany('App\TreinoBase', 'ficha_id')->get();
 
     }
 

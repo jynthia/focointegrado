@@ -112,11 +112,11 @@
 
                                 <tr data-toggle="collapse" data-target="#accordion" class="clickable">
                                     <td>{{$ficha->id}}</td>
-                                    <td class="txt-oflo">{{$ficha->nome}}</td>
-                                    {{--<td>{{$ficha->aluno()}}</td>--}}
-                                    {{--<td>{{$ficha->data_inserida}}</td>--}}
-                                    {{--<td class="text-danger">{{$ficha->data_vencimento}}</td>--}}
-                                    {{--<td><i class="fa fa-edit"></i><i class="fa fa-trash"></i></td>--}}
+                                    <td class="txt-oflo">{{$ficha->titulo}}</td>
+                                    <td>{{$ficha->aluno()}}</td>
+                                    <td>{{$ficha->data_inserida}}</td>
+                                    <td class="text-danger">{{$ficha->data_vencimento}}</td>
+                                    <td><i class="fa fa-edit"></i><i class="fa fa-trash"></i></td>
                                 </tr>
 
                                 <tr>
@@ -194,53 +194,36 @@
                                                 </div>
 
                                             </div>
-                                            <h4>TREINO A</h4>
-                                            <p>Titulo: <span class="text-dark">Prevenção / Habilidade Motora</span></p>
-                                            <p>Warm-up: <span class="text-dark">Lorem Ipsum</span></p>
-                                            <table class="table">
-                                                <thead>
-                                                <tr>
-                                                    <th class="text-dark">Exercício</th>
-                                                    <th class="text-dark">Sets</th>
-                                                    <th class="text-dark">Reps</th>
-                                                    <th class="text-dark">Rest</th>
-                                                </tr>
-                                                </thead>
-                                                <tbody>
-                                                <tr>
-                                                    <td>Elevação de quadril</td>
-                                                    <td>3</td>
-                                                    <td>3</td>
-                                                    <td>30</td>
-                                                </tr>
-                                                </tbody>
-                                            </table>
-                                            <h4>TREINO B</h4>
-                                            <p>Titulo: <span class="text-dark">Prevenção / Habilidade Motora</span></p>
-                                            <p>Warm-up: <span class="text-dark">Lorem Ipsum</span></p>
-                                            <table class="table">
-                                                <thead>
-                                                <tr>
-                                                    <th class="text-dark">Exercício</th>
-                                                    <th class="text-dark">Sets</th>
-                                                    <th class="text-dark">Reps</th>
-                                                    <th class="text-dark">Rest</th>
-                                                </tr>
-                                                </thead>
-                                                <tbody>
-                                                <tr>
-                                                    <td>Elevação de quadril</td>
-                                                    <td>3</td>
-                                                    <td>3</td>
-                                                    <td>30</td>
-                                                </tr>
-                                                </tbody>
-                                            </table>
+
                                         </div>
                                     </td>
                                 </tr>
-
+                                @foreach($ficha->treinos() as $treino)
+                                    <h4>{{$treino['nome']}}</h4>
+                                    <p>Warm-up: <span class="text-dark">{{$treino['warmup']}}</span></p>
+                                    <table class="table">
+                                        <thead>
+                                        <tr>
+                                            <th class="text-dark">Exercício</th>
+                                            <th class="text-dark">Sets</th>
+                                            <th class="text-dark">Reps</th>
+                                            <th class="text-dark">Rest</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        {{--@foreach($treino->series()->exerciciosDaSerie() as $serie)--}}
+                                            {{--<tr>--}}
+                                                {{--<td>{{$serie->exercicio()}}</td>--}}
+                                                {{--<td>{{$serie->sets}}</td>--}}
+                                                {{--<td>{{$serie->reps}}</td - >--}}
+                                                {{--<td>{{$serie->rest}}</td>--}}
+                                            {{--</tr>--}}
+                                        {{--@endforeach--}}
+                                        </tbody>
+                                    </table>
                                 @endforeach
+
+                            @endforeach
 
                             </tbody>
                         </table>

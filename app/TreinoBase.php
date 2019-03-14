@@ -18,7 +18,8 @@ class TreinoBase extends Model
 
         'nome',
         'cadastrado_por',
-        'ficha_id'
+        'ficha_id',
+        'warmup'
 
     ];
 
