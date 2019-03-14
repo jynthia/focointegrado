@@ -166,6 +166,8 @@
 
                     </div>
                     <div class="col-md-3 col-sm-4 col-xs-6 pull-right">
+
+                        {{--TODO: TESTAR SE ESTA FUNCIONANDO --}}
                         <select class="form-control pull-right row b-none">
 
                             @foreach($dados['modalidades'] as $modalidade)
