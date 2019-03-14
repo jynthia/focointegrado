@@ -226,14 +226,10 @@
                                                 </tr>
                                                 <tr>
                                                     <td><p>CPF: <span class="text-dark">{{$aluno->cpf}}</span></p></td>
-                                                    <td><p>Estado Civil: <span class="text-dark">Lorem Ipsum</span></p></td>
-                                                </tr>
+                                                    <td><p>Endereço: <span class="text-dark">{{$aluno->endereco}}</span></p></td>
+                                                </tr>git
                                                 <tr>
-                                                    <td><p>Endereço: <span class="text-dark">Lorem Ipsum</span></p></td>
-                                                    <td><p>Gênero: <span class="text-dark">Lorem Ipsum</span></p></td>
-                                                </tr>
-                                                <tr>
-                                                    <td colspan="2"><p>Objetivo: <span class="text-dark">Lorem Ipsum</span></p></td>
+                                                    <td colspan="2"><p>Objetivo: <span class="text-dark">{{$dados['avaliacoes']}}</span></p></td>
                                                 </tr>
                                                 <tr>
                                                     <td colspan="2"><p>Atividades atuais: <span class="text-dark">Lorem Ipsum</span></p></td>

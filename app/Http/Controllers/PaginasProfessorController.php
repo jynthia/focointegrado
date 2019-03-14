@@ -2,10 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\AvaliacaoAluno;
 use Illuminate\Http\Request;
 use App\Professor;
 use App\Exercicio;
 use App\Modalidade;
+use App\HorarioAluno;
+
 
 class PaginasProfessorController extends Controller
 {
@@ -17,6 +20,8 @@ class PaginasProfessorController extends Controller
         $exercicios = Exercicio::all()->count();
         $grupos = $professor->grupos;
         $modalidades = Modalidade::all();
+        $avaliacoes = AvaliacaoAluno::all();
+        $horarios = HorarioAluno::all();
 
 //        TODO: falta inserir uma função no controller para carregar a frequencia do aluno e se a ficha está ativa ou nao
 
@@ -26,7 +31,9 @@ class PaginasProfessorController extends Controller
             'fichas_ativas' => $fichas_ativas,
             'alunos' => $alunos,
             'exercicios' => $exercicios,
-            'modalidades' => $modalidades
+            'modalidades' => $modalidades,
+            'avaliacoes' => $avaliacoes,
+            'horarios' => $horarios
         );
         return view('prof.index')->withDados($dados);
 

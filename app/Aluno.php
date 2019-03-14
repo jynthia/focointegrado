@@ -87,13 +87,13 @@ class Aluno extends Model
 
     public function horarios() {
 
-        return $this->hasOne('App\HorarioAluno', 'aluno_id');
+        return $this->hasOne('App\HorarioAluno', 'aluno_id')->first()->id;
 
     }
 
     public function avaliacao() {
 
-        return $this->hasOne('App\AvaliacaoAluno', 'aluno_id');
+        return $this->hasOne('App\AvaliacaoAluno', 'aluno_id')->first()->id;
     }
 
     public function isGrupo()
