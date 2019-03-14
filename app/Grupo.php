@@ -23,6 +23,11 @@ class Grupo extends Model
 
     ];
 
+    public function nome() {
+
+        return 'Grupo ' . $this->modalidade() . ' - ' . $this->horario;
+
+    }
     public function professor() {
 
         return $this->belongsTo('App\Professor', 'professor_id');

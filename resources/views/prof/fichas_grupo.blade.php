@@ -44,12 +44,12 @@
                                         </div>
 
                                         <div class="form-group">
-                                            <label for="aluno_id" class="control-label">Grupo</label>
-                                            <select class="form-control" id="aluno_id" name="aluno">
+                                            <label for="grupo_id" class="control-label">Grupo</label>
+                                            @foreach($dados['grupos'] as $grupo)
 
-                                                <option value="1">FIT</option>
+                                                <option value="{{$grupo->id}}">{{$grupo->nome()}}</option>
 
-                                            </select>
+                                            @endforeach
                                         </div>
 
                                         <div class="form-group">
@@ -79,8 +79,12 @@
 
                     <div class="col-md-3 col-sm-4 col-xs-6 pull-right">
                         <select class="form-control pull-right row b-none">
-                            <option>Todos os grupos</option>
-                            <option>FIT</option>
+                            <option value="0">Todos os grupos</option>
+                            @foreach($dados['grupos'] as $grupo)
+
+                                <option value="{{$grupo->id}}">{{$grupo->nome()}}</option>
+
+                            @endforeach
                         </select>
                     </div>
                     <h3 class="box-title">Fichas cadastradas</h3>
@@ -100,12 +104,14 @@
 
                             <!-- TODO: adicionar links e espaço entre ações -->
 
+                            @foreach($dados['fichas'] as $ficha)
+
                             <tr data-toggle="collapse" data-target="#accordion" class="clickable">
-                                <td>1</td>
-                                <td class="txt-oflo">Março 2019</td>
-                                <td>FIT</td>
-                                <td>12/01/2019</td>
-                                <td class="text-danger">12/01/2019</td>
+                                <td>{{$ficha->id}}</td>
+                                <td class="txt-oflo">{{$ficha->titulo}}</td>
+                                <td>{{$ficha->destinatario()}}</td>
+                                <td>{{$ficha->data_inserida}}</td>
+                                <td class="text-danger">{{$ficha->data_validade}}</td>
                                 <td><i class="fa fa-edit"></i><i class="fa fa-trash"></i></td>
                             </tr>
 
@@ -227,7 +233,7 @@
                                     </div>
                                 </td>
                             </tr>
-
+                            @endforeach
                             </tbody>
                         </table>
                     </div>

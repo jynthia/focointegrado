@@ -118,12 +118,15 @@ class PaginasProfessorController extends Controller
         $professor = Professor::find(7);
         $grupos = $professor->grupos;
         $exercicios = Exercicio::all();
+        $fichas_grupo = Ficha::where('cadastrado_por', $professor->usuario_id)->where('aluno_id', NULL)->orderBy('created_at', 'desc')->get();
+
 
         $dados = array(
 
             'titulo' => 'Fichas de Treino - Grupos',
             'grupos' => $grupos,
-            'exercicios' => $exercicios
+            'exercicios' => $exercicios,
+            'fichas' => $fichas_grupo
 
         );
 
