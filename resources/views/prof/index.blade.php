@@ -123,9 +123,9 @@
 
                                             <label for="local_treino_id" class="control-label">Local de treino</label>
                                             <select class="form-control" id="local_treino_id" name="local_treino_id">
-
-                                                <option value="1">FOCO Integrado</option>
-
+                                                @foreach($dados['locais_treino'] as $local)
+                                                    <option value="{{$local->id}}">{{$local->nome}}</option>
+                                                @endforeach
                                             </select>
                                         </div>
 
@@ -133,19 +133,19 @@
 
                                             <label for="genero_id" class="control-label">Gênero</label>
                                             <select class="form-control" id="genero_id" name="genero_id">
-
-                                                <option value="1">Feminino</option>
-
+                                                @foreach($dados['generos'] as $genero)
+                                                    <option value="{{$genero->id}}">{{$genero->nome}}</option>
+                                                @endforeach
                                             </select>
                                         </div>
 
                                         <div class="form-group">
 
                                             <label for="programa_id" class="control-label">Programa</label>
-                                            <select class="form-control" id="programa_id" name="programa">
-
-                                                <option value="kids">Kids</option>
-
+                                            <select class="form-control" id="genero_id" name="genero_id">
+                                                @foreach($dados['modalidades'] as $modal)
+                                                    <option value="{{$modal->id}}">{{$modal->nome}}</option>
+                                                @endforeach
                                             </select>
                                         </div>
 
@@ -269,11 +269,11 @@
                                                 </thead>
                                                 <tbody>
                                                 <tr>
-                                                    <td>{{$aluno->horarios['acordar']}}</td>
-                                                    <td>{{$aluno->horarios['trabalho']}}</td>
-                                                    <td>{{$aluno->horarios['estudo']}}</td>
-                                                    <td>{{$aluno->horarios['treino']}}</td>
-                                                    <td>{{$aluno->horarios['dormir']}}</td>
+                                                    <td>{{$aluno->horarios['acordar']}}h</td>
+                                                    <td>{{$aluno->horarios['trabalho']}}h</td>
+                                                    <td>{{$aluno->horarios['estudo']}}h</td>
+                                                    <td>{{$aluno->horarios['treino']}}h</td>
+                                                    <td>{{$aluno->horarios['dormir']}}h</td>
                                                 </tr>
                                                 </tbody>
                                             </table>
@@ -327,16 +327,21 @@
                                             <label for="modalidade" class="control-label">Programa</label>
                                             <select class="form-control" id="modalidade" name="modalidade">
 
-                                                <option value="kids">Kids</option>
+                                                @foreach($dados['modalidades'] as $modalidade)
+                                                    <option>{{$modalidade->nome}}</option>
+                                                @endforeach
 
                                             </select>
                                         </div>
 
                                         <div class="form-group">
                                             <label for="aluno" class="control-label"></label>
-                                            <input type="checkbox" name="aluno" id="aluno" value="1">Cinthia
 
-                                            <input type="checkbox" name="aluno" id="aluno2" value="2">Cinthia
+                                            @foreach($dados['alunos'] as $aluno)
+
+                                                <input type="checkbox" name="aluno" id="aluno" value="{{$aluno->id}}">{{$aluno->nome}}
+
+                                            @endforeach
                                         </div>
                                     </form>
 
@@ -369,26 +374,26 @@
                             <tbody>
 
                             <!-- TODO: adicionar links e espaço entre ações -->
-                            <tr data-toggle="collapse" data-target="#accordion" class="clickable">
-                                <td>1</td>
-                                <td class="txt-oflo">FIT</td>
-                                <td><div class='editable' onclick='makeElementEditable(this)'
-                                         onblur='updateTaskName(this)'>19h30</div></td>
-                                <td class="text-danger">Pendente</td>
-                                <td><i class="fa fa-edit"></i><i class="fa fa-trash"></i></td>
-                            </tr>
+                                @foreach($dados['grupos'] as $grupo)
+                                    <tr data-toggle="collapse" data-target="#accordion" class="clickable">
+                                        <td>{{$grupo->id}}</td>
+                                        <td class="txt-oflo">{{$grupo->modalidade}}</td>
+                                        <td>{{$grupo->horario}}</td>
+                                        <td class="text-danger"></td>
+                                        <td><i class="fa fa-edit"></i><i class="fa fa-trash"></i></td>
+                                    </tr>
 
-                            <tr>
-                                <td colspan="5">
-                                    <div id="accordion" class="collapse">
-                                        <H5>ALUNOS:</H5>
-                                        <p><span class="text-dark">Cinthia Campos</span> <i class="fa fa-trash-o"></i></p>
-                                        <p><span class="text-dark">Cinthia Campos</span> <i class="fa fa-trash-o"></i></p>
-                                        <p><span class="text-dark">Cinthia Campos</span> <i class="fa fa-trash-o"></i></p>
-
-                                    </div>
-                                </td>
-                            </tr>
+                                    <tr>
+                                        <td colspan="5">
+                                            <div id="accordion" class="collapse">
+                                                <H5>ALUNOS:</H5>
+                                                @foreach($grupo->alunos as $aluno)
+                                                    <p><span class="text-dark">{{$aluno['nome']}}</span> <i class="fa fa-trash-o"></i></p>
+                                                @endforeach
+                                            </div>
+                                        </td>
+                                    </tr>
+                                @endforeach
 
                             </tbody>
                         </table>

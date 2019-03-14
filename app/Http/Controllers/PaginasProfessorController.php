@@ -8,6 +8,8 @@ use App\Professor;
 use App\Exercicio;
 use App\Modalidade;
 use App\HorarioAluno;
+use App\Academia;
+use App\Genero;
 
 
 class PaginasProfessorController extends Controller
@@ -20,8 +22,10 @@ class PaginasProfessorController extends Controller
         $exercicios = Exercicio::all()->count();
         $grupos = $professor->grupos;
         $modalidades = Modalidade::all();
-        $avaliacoes = AvaliacaoAluno::all();
+//        $avaliacoes = AvaliacaoAluno::all();
         $horarios = HorarioAluno::all();
+        $locais_treino = Academia::all();
+        $generos = Genero::all();
 
 //        TODO: falta inserir uma função no controller para carregar a frequencia do aluno e se a ficha está ativa ou nao
 
@@ -32,9 +36,12 @@ class PaginasProfessorController extends Controller
             'alunos' => $alunos,
             'exercicios' => $exercicios,
             'modalidades' => $modalidades,
-            'avaliacoes' => $avaliacoes,
+            'grupos' => $grupos,
+//            'avaliacoes' => $avaliacoes,
             'horarios' => $horarios,
-            'titulo' => 'Início'
+            'titulo' => 'Início',
+            'locais_treino' => $locais_treino,
+            'generos' => $generos
         );
         return view('prof.index')->withDados($dados);
 
