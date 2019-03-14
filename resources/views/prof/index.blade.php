@@ -377,7 +377,7 @@
                                 @foreach($dados['grupos'] as $grupo)
                                     <tr data-toggle="collapse" data-target="#accordion" class="clickable">
                                         <td>{{$grupo->id}}</td>
-                                        <td class="txt-oflo">{{$grupo->modalidade}}</td>
+                                        <td class="txt-oflo">{{$grupo->modalidade()}}</td>
                                         <td>{{$grupo->horario}}</td>
                                         <td class="text-danger"></td>
                                         <td><i class="fa fa-edit"></i><i class="fa fa-trash"></i></td>

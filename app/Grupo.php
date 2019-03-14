@@ -36,7 +36,10 @@ class Grupo extends Model
 
     public function modalidade() {
 
-        return $this->belongsTo('App\Modalidade', 'modalidade_id')->first()->nome;
+        if($this->modalidade_id != NULL)
+            return $this->belongsTo('App\Modalidade')->first()->nome;
+
+        return 'Não cadastrado';
 
     }
 
