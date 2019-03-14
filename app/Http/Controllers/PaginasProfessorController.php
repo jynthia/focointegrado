@@ -9,6 +9,7 @@ use App\Exercicio;
 use App\Modalidade;
 use App\HorarioAluno;
 use App\Academia;
+use App\Atratores;
 use App\Genero;
 
 
@@ -22,8 +23,6 @@ class PaginasProfessorController extends Controller
         $exercicios = Exercicio::all()->count();
         $grupos = $professor->grupos;
         $modalidades = Modalidade::all();
-//        $avaliacoes = AvaliacaoAluno::all();
-        $horarios = HorarioAluno::all();
         $locais_treino = Academia::all();
         $generos = Genero::all();
 
@@ -37,8 +36,6 @@ class PaginasProfessorController extends Controller
             'exercicios' => $exercicios,
             'modalidades' => $modalidades,
             'grupos' => $grupos,
-//            'avaliacoes' => $avaliacoes,
-            'horarios' => $horarios,
             'titulo' => 'Início',
             'locais_treino' => $locais_treino,
             'generos' => $generos
@@ -58,14 +55,25 @@ class PaginasProfessorController extends Controller
             'usuario' => $usuario,
             'titulo' => 'Meu Perfil'
         );
-
+//  TODO: titulo nao ta funcionando
         return view('prof.perfil')->withDados($dados);
 
     }
 
     public function getAtratores() {
 
-        return view('prof.atratores');
+        $professor = Professor::find(7);
+        $alunos = $professor->alunos;
+        $atratores = Atratores::where('cadastrado_por', $professor->usuario_id)->orderBy('created_at', 'desc')->get();
+
+        $dados = array(
+
+            'titulo' => 'Atratores e Biomecânica',
+            'alunos' => $alunos,
+            'atratores' => $atratores
+
+        );
+        return view('prof.atratores')->withDados($dados);
 
     }
 

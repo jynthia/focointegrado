@@ -5,11 +5,11 @@
     <div class="container-fluid">
         <div class="row bg-title">
             <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
-                <h4 class="page-title">Avaliacoes Biomecanicas</h4> </div>
+                <h4 class="page-title">Avaliacoes Biomecânicas e Atratores</h4> </div>
             <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
                 <ol class="breadcrumb">
                     <li><a href="#">Início</a></li>
-                    <li class="active">Avaliacoes Biomecanicas</li>
+                    <li class="active">Avaliacoes Biomecânicas e Atratores</li>
 
                 </ol>
             </div>
@@ -30,7 +30,7 @@
                                 <div class="modal-header">
 
                                     <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                    <h4 class="modal-title">Adicionar ficha</h4>
+                                    <h4 class="modal-title">Adicionar Ficha</h4>
 
                                 </div>
 
@@ -47,7 +47,11 @@
                                             <label for="aluno_id" class="control-label">Aluno</label>
                                             <select class="form-control" id="aluno_id" name="aluno">
 
-                                                <option value="1">Cinthia Campos</option>
+                                                @foreach($dados['alunos'] as $aluno)
+
+                                                    <option value="{{$aluno->id}}">{{$aluno->nome}}</option>
+
+                                                @endforeach
 
                                             </select>
                                         </div>
@@ -329,247 +333,262 @@
 
                     <div class="col-md-3 col-sm-4 col-xs-6 pull-right">
                         <select class="form-control pull-right row b-none">
-                            <option>Todos os alunos</option>
-                            <option>Cinthia Campos</option>
+                            <option value="0">Todos os alunos</option>
+                            @foreach($dados['alunos'] as $aluno)
+                                <option value="{{$aluno->id}}">{{$aluno->nome}}</option>
+                            @endforeach
                         </select>
                     </div>
-                    <h3 class="box-title">Avaliacoes Biomecanicas cadastradas</h3>
+                    <h3 class="box-title">Avaliações Biomecânicas Cadastradas</h3>
                     <div class="table-responsive">
                         <table class="table table-hover">
                             <thead>
-                            <tr>
-                                <th>#</th>
-                                <th>NOME</th>
-                                <th>ALUNO</th>
-                                <th>DATA INSERIDA</th>
-                                <th>AÇÕES</th>
-                            </tr>
+                                <tr>
+                                    <th>#</th>
+                                    <th>ALUNO</th>
+                                    <th>DATA INSERIDA</th>
+                                    <th>AÇÕES</th>
+                                </tr>
                             </thead>
                             <tbody>
 
                             <!-- TODO: adicionar links e espaço entre ações -->
 
-                            <tr data-toggle="collapse" data-target="#accordion" class="clickable">
-                                <td>1</td>
-                                <td class="txt-oflo">Março 2019</td>
-                                <td>Cinthia Campos</td>
-                                <td>12/01/2019</td>
-                                <td><i class="fa fa-edit"></i><i class="fa fa-trash"></i></td>
+                            @foreach($dados['atratores'] as $atratores)
+
+                                <tr data-toggle="collapse" data-target="#accordion" class="clickable">
+                                    <td>{{$atratores->id}}</td>
+                                    <td>{{$atratores->aluno()}}</td>
+                                    <td>{{$atratores->data}}</td>
+                                    <td><i class="fa fa-edit"></i><i class="fa fa-trash"></i></td>
+                                </tr>
+
+                                    <tr>
+                                        <td colspan="6">
+                                            <div id="accordion" class="collapse">
+                                                <h4>ATRATORES - RUN</h4>
+                                                <table class="table">
+                                                    <thead>
+                                                    <tr>
+                                                        <th class="text-dark">Hip lock</th>
+                                                        <th class="text-dark">Retracao perna de bal.</th>
+                                                        <th class="text-dark">Fp from above</th>
+                                                        <th class="text-dark">Positive running</th>
+                                                        <th class="text-dark">Vertical head</th>
+                                                    </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                    <tr>
+                                                        <td>{{$atratores->hip_lock}}</td>
+                                                        <td>{{$atratores->retracao_perna}}</td>
+                                                        <td>{{$atratores->fp_from_above}}</td>
+                                                        <td>{{$atratores->positive_running}}</td>
+                                                        <td>{{$atratores->vertical_head}}</td>
+                                                    </tr>
+                                                    </tbody>
+                                                </table>
+                                                <h4>ATRATORES - COD</h4>
+                                                <table class="table">
+                                                    <thead>
+                                                    <tr>
+                                                        <th class="text-dark">Ub first</th>
+                                                        <th class="text-dark">Rot. tronco + extensao</th>
+                                                        <th class="text-dark">Desaceleracao</th>
+                                                    </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                    <tr>
+                                                        <td>{{$atratores->ub_first}}</td>
+                                                        <td>{{$atratores->rot_tronco_extensao}}</td>
+                                                        <td>{{$atratores->desaceleracao}}</td>
+                                                    </tr>
+                                                    </tbody>
+                                                </table>
+
+                                                <h4>ATRATORES - ACELERACAO</h4>
+                                                <table class="table">
+                                                    <thead>
+                                                    <tr>
+                                                        <th class="text-dark">Power line</th>
+                                                        <th class="text-dark">Tronco inclin. a frente</th>
+                                                        <th class="text-dark">Knee drive</th>
+                                                        <th class="text-dark">Estrategia de rot./ext.</th>
+                                                        <th class="text-dark">Aplicacao de forca hor.</th>
+                                                    </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                    <tr>
+                                                        <td>{{$atratores->power_line}}</td>
+                                                        <td>{{$atratores->tronco_inclin_frente}}</td>
+                                                        <td>{{$atratores->knee_drive}}</td>
+                                                        <td>{{$atratores->estrategia_rot_ext}}</td>
+                                                        <td>{{$atratores->aplicacao_forca_hor}}</td>
+                                                    </tr>
+                                                    </tbody>
+                                                </table>
+
+                                                <h4>BIOMECANICA - RUN</h4>
+
+                                                <table class="table">
+                                                    <thead>
+                                                    <tr>
+                                                        <th> </th>
+                                                        <th class="text-dark">Direito</th>
+                                                        <th class="text-dark">Esquerdo</th>
+                                                    </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                    <tr>
+                                                        <td class="text-dark">T. de contato (s)</td>
+                                                        <td>{{$atratores->t_contato_dir}}</td>
+                                                        <td>{{$atratores->t_contato_ex}}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="text-dark">T. de voo (s)</td>
+                                                        <td>{{$atratores->t_voo_dir}}</td>
+                                                        <td>{{$atratores->t_voo_es}}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="text-dark">Frequencia (Hz)</td>
+                                                        <td>{{$atratores->frequencia_dir}}</td>
+                                                        <td>{{$atratores->frequencia_es}}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="text-dark">Oscilacao vert. (m)</td>
+                                                        <td>{{$atratores->oscilacao_dir}}</td>
+                                                        <td>{{$atratores->oscilacao_es}}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="text-dark">F. max. relativa (bw)</td>
+                                                        <td>{{$atratores->f_max_dir}}</td>
+                                                        <td>{{$atratores->f_max_es}}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="text-dark">Lef stiff. (KN/m)</td>
+                                                        <td>{{$atratores->leg_stiff_dir}}</td>
+                                                        <td>{{$atratores->leg_stiff_es}}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="text-dark">Ang. de pronacao</td>
+                                                        <td>{{$atratores->pronacao_dir}}</td>
+                                                        <td>{{$atratores->pronacao_es}}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="text-dark">Strike</td>
+                                                        <td>{{$atratores->strike_dir}}</td>
+                                                        <td>{{$atratores->strike_es}}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="text-dark">Tibia</td>
+                                                        <td>{{$atratores->tibia_dir}}</td>
+                                                        <td>{{$atratores->tibia_es}}'</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th class="text-dark">% Ass. passada</th>
+                                                        <td colspan="2">{{$atratores->ass_passada}}</td>
+                                                    </tr>
+                                                    </tbody>
+                                                </table>
+
+                                    <h4> TESTES DE PERFORMANCE GERAL</h4>
+
+                                    <table class="table">
+                                        <thead>
+                                        <tr>
+                                            <th></th>
+                                            <th class="text-dark">Direito</th>
+                                            <th class="text-dark">Esquerdo</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr>
+                                            <td class="text-dark">Romain chair unil.</td>
+                                            <td>{{$atratores->romain_chair_uni_dir}}</td>
+                                            <td>{{$atratores->romain_chair_uni_es}}'</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-dark">Iso Reto</td>
+                                            <td>{{$atratores->iso_reto_dir}}</td>
+                                            <td>{{$atratores->iso_reto_es}}'</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-dark">Split Jump</td>
+                                            <td>{{$atratores->split_jump_dir}}</td>
+                                            <td>{{$atratores->split_jump_es}}'</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-dark">Sl Hop For Distance Test</td>
+                                            <td>{{$atratores->sl_hop_test_dir}}</td>
+                                            <td>{{$atratores->sl_hop_test_es}}'</td>
+                                        </tr>
+
+                                        <tr>
+                                            <td class="text-dark">Triple Hop Test</td>
+                                            <td>{{$atratores->triple_hop_dir}}</td>
+                                            <td>{{$atratores->triple_hop_es}}</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-dark">Cross Over Hop Test</td>
+                                            <td>{{$atratores->cross_over_dir}}</td>
+                                            <td>{{$atratores->cross_over_es}}</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-dark">6m Timed Hop Test</td>
+                                            <td>{{$atratores->m_timed_dir}}</td>
+                                            <td>{{$atratores->m_timed_es}}</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-dark">Romain Chair Bil.</td>
+                                            <td colspan="2">{{$atratores->romain_chair_bi}}</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-dark">Toe Off</td>
+                                            <td colspan="2">{{$atratores->toe_off}}</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-dark">Hip thrust</td>
+                                            <td colspan="2">{{$atratores->hip_thrust}}</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-dark">Ground Contact</td>
+                                            <td colspan="2">{{$atratores->ground_contact}}</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-dark">CMJ</td>
+                                            <td colspan="2">{{$atratores->cmj}}</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-dark">SJ</td>
+                                            <td colspan="2">{{$atratores->sj}}</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-dark">RSI Stifness</td>
+                                            <td colspan="2">{{$atratores->rsi_stifness}}</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-dark">RSI Drop Jump</td>
+                                            <td colspan="2">{{$atratores->rsi_drop_jump}}</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-dark">Índice de Bosco</td>
+                                            <td colspan="2">{{$atratores->indice_bosco}}</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-dark">Horizontal Jump Test</td>
+                                            <td colspan="2">{{$atratores->horizontal_jump}}</td></td>
+                                        </tr>
+
+
+                                        </tbody>
+
+                                        </table>
+
+
+                                    </div>
+
+                                </td>
                             </tr>
-
-                            <tr>
-                                <td colspan="6">
-                                    <div id="accordion" class="collapse">
-                                        <h4>ATRATORES - RUN</h4>
-                                        <table class="table">
-                                            <thead>
-                                            <tr>
-                                                <th class="text-dark">Hip lock</th>
-                                                <th class="text-dark">Retracao perna de bal.</th>
-                                                <th class="text-dark">Fp from above</th>
-                                                <th class="text-dark">Positive running</th>
-                                                <th class="text-dark">Vertical head</th>
-                                            </tr>
-                                            </thead>
-                                            <tbody>
-                                            <tr>
-                                                <td>1</td>
-                                                <td>3</td>
-                                                <td>3</td>
-                                                <td>30</td>
-                                                <td>10</td>
-                                            </tr>
-                                            </tbody>
-                                        </table>
-                                        <h4>ATRATORES - COD</h4>
-                                        <table class="table">
-                                            <thead>
-                                            <tr>
-                                                <th class="text-dark">Ub first</th>
-                                                <th class="text-dark">Rot. tronco + extensao</th>
-                                                <th class="text-dark">Desaceleracao</th>
-                                            </tr>
-                                            </thead>
-                                            <tbody>
-                                            <tr>
-                                                <td>1</td>
-                                                <td>3</td>
-                                                <td>3</td>
-                                            </tr>
-                                            </tbody>
-                                        </table>
-
-                                        <h4>ATRATORES - ACELERACAO</h4>
-                                        <table class="table">
-                                            <thead>
-                                            <tr>
-                                                <th class="text-dark">Power line</th>
-                                                <th class="text-dark">Tronco inclin. a frente</th>
-                                                <th class="text-dark">Knee drive</th>
-                                                <th class="text-dark">Estrategia de rot./ext.</th>
-                                                <th class="text-dark">Aplicacao de forca hor.</th>
-                                            </tr>
-                                            </thead>
-                                            <tbody>
-                                            <tr>
-                                                <td>1</td>
-                                                <td>3</td>
-                                                <td>3</td>
-                                                <td>4</td>
-                                                <td>5</td>
-                                            </tr>
-                                            </tbody>
-                                        </table>
-
-                                        <h4>BIOMECANICA - RUN</h4>
-
-                                        <table class="table">
-                                            <thead>
-                                            <tr>
-                                                <th> </th>
-                                                <th class="text-dark">Direito</th>
-                                                <th class="text-dark">Esquerdo</th>
-                                            </tr>
-                                            </thead>
-                                            <tbody>
-                                            <tr>
-                                                <td class="text-dark">T. de contato (s)</td>
-                                                <td>2.0</td>
-                                                <td>2.2</td>
-                                            </tr>
-                                            <tr>
-                                                <td class="text-dark">T. de voo (s)</td>
-                                                <td>3.0</td>
-                                                <td>3.2</td>
-                                            </tr>
-                                            <tr>
-                                                <td class="text-dark">Frequencia (Hz)</td>
-                                                <td>2.0</td>
-                                                <td>2.2</td>
-                                            </tr>
-                                            <tr>
-                                                <td class="text-dark">Oscilacao vert. (m)</td>
-                                                <td>2.0</td>
-                                                <td>2.3</td>
-                                            </tr>
-                                            <tr>
-                                                <td class="text-dark">F. max. relativa (bw)</td>
-                                                <td>2.0</td>
-                                                <td>2.4</td>
-                                            </tr>
-                                            <tr>
-                                                <td class="text-dark">Lef stiff. (KN/m)</td>
-                                                <td>2.0</td>
-                                                <td>2.0</td>
-                                            </tr>
-                                            <tr>
-                                                <td class="text-dark">Ang. de pronacao</td>
-                                                <td>- Ideal 5'</td>
-                                                <td>- Ideal 5'</td>
-                                            </tr>
-                                            <tr>
-                                                <td class="text-dark">Strike</td>
-                                                <td>- Ideal 5'</td>
-                                                <td>- Ideal 5'</td>
-                                            </tr>
-                                            <tr>
-                                                <td class="text-dark">Tibia</td>
-                                                <td>- Ideal 10'</td>
-                                                <td>- Ideal 10'</td>
-                                            </tr>
-                                            <tr>
-                                                <th class="text-dark">% Ass. passada</th>
-                                                <td colspan="2">% -Ideal 10%</td>
-                                            </tr>
-                                            </tbody>
-                                        </table>
-
-                            <h4> TESTES DE PERFORMANCE GERAL</h4>
-
-                            <table class="table">
-                                <thead>
-                                <tr>
-                                    <th></th>
-                                    <th class="text-dark">Direito</th>
-                                    <th class="text-dark">Esquerdo</th>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                <tr>
-                                    <td class="text-dark">Romain chair unil.</td>
-                                    <td>2.0</td>
-                                    <td>3.0</td>
-                                </tr>
-                                <tr>
-                                    <td class="text-dark">Sl hop for distance test</td>
-                                    <td>2.9</td>
-                                    <td>3.1</td>
-                                </tr>
-                                <tr>
-                                    <td class="text-dark">Triple hop test</td>
-                                    <td>2.2</td>
-                                    <td>3.2</td>
-                                </tr>
-                                <tr>
-                                    <td class="text-dark">Cross over hop test</td>
-                                    <td>2.1</td>
-                                    <td>3.9</td>
-                                </tr>
-                                <tr>
-                                    <td class="text-dark">6m Timed hop test</td>
-                                    <td>2.9</td>
-                                    <td>4.3</td>
-                                </tr>
-                                <tr>
-                                    <td class="text-dark">Romain chair bil.</td>
-                                    <td colspan="2">2.3</td>
-                                </tr>
-                                <tr>
-                                    <td class="text-dark">Iso reto femoral</td>
-                                    <td colspan="2">3.6</td>
-                                </tr>
-                                <tr>
-                                    <td class="text-dark">Hip thrust</td>
-                                    <td colspan="2">3.5</td>
-                                </tr>
-                                <tr>
-                                    <td class="text-dark">Split jump</td>
-                                    <td colspan="2">2.1</td>
-                                </tr>
-                                <tr>
-                                    <td class="text-dark">CMJ</td>
-                                    <td colspan="2">1.1</td>
-                                </tr>
-                                <tr>
-                                    <td class="text-dark">SJ</td>
-                                    <td colspan="2">6.7</td>
-                                </tr>
-                                <tr>
-                                    <td class="text-dark">RSI stifness</td>
-                                    <td colspan="2">4.4</td>
-                                </tr>
-                                <tr>
-                                    <td class="text-dark">RSI drop jump</td>
-                                    <td colspan="2">5.4</td>
-                                </tr>
-                                <tr>
-                                    <td class="text-dark">Indice de bosco</td>
-                                    <td colspan="2">3.2</td>
-                                </tr>
-                                <tr>
-                                    <td class="text-dark">Horizontal jump test</td>
-                                    <td colspan="2">3.1</td>
-                                </tr>
-
-
-                                </tbody>
-
-                            </table>
-
-
-                    </div>
-                    </td>
-                    </tr>
+                    @endforeach
 
                     </tbody>
                     </table>
