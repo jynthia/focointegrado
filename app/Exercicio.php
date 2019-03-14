@@ -26,13 +26,14 @@ class Exercicio extends Model
 
     public function modalidade() {
 
-        return $this->belongsTo('App\Modalidade');
-
+        if($this->modalidade_id != NULL)
+            return $this->belongsTo('App\Modalidade')->first()->nome;
+        return 'Não cadastrado';
     }
 
     public function cadastradoPor() {
 
-        return $this->belongsTo('App\Usuario', 'cadastrado_por');
+        return $this->belongsTo('App\Usuario', 'cadastrado_por')->first()->login;
 
     }
 

@@ -28,13 +28,13 @@ class TreinoBase extends Model
 
     public function modalidade() {
 
-        return $this->belongsTo('App\Modalidade');
+        return $this->belongsTo('App\Modalidade')->first()->nome;
 
     }
 
     public function cadastradoPor() {
 
-        return $this->belongsTo('App\Usuario', 'cadastrado_por');
+        return $this->belongsTo('App\Usuario', 'cadastrado_por')->first()->login;
 
     }
 
@@ -52,11 +52,12 @@ class TreinoBase extends Model
 
         if($this->aluno_id) {
 
-            return $this->belongsTo('App\Aluno', 'aluno_id');
+            return $this->belongsTo('App\Aluno', 'aluno_id')->first()->nome;
 
         }
-
-        return $this->belongsTo('App\Grupo', 'grupo_id');
+        $horario = $this->belongsTo('App\Grupo', 'grupo_id')->first()->horario;
+        $modal = $this->modalidade();
+        return "Grupo $modal - $horario";
 
     }
 

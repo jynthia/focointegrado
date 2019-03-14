@@ -31,7 +31,7 @@ class Grupo extends Model
 
     public function modalidade() {
 
-        return $this->belongsTo('App\Modalidade', 'modalidade_id');
+        return $this->belongsTo('App\Modalidade', 'modalidade_id')->first()->nome;
 
     }
 

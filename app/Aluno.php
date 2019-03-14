@@ -33,37 +33,38 @@ class Aluno extends Model
         'usuario_id'
 
     ];
-
+// Retorna id do professor relativo ao aluno
     public function professor() {
 
-        return $this->belongsTo('App\Professor');
+        return $this->belongsTo('App\Professor')->first()->id;
 
     }
-
+// Retorna nome do local de treino
     public function academia() {
 
         return $this->belongsTo('App\Academia', 'local_treino_id')->first()->nome;
 
     }
-
+// Retorna genero do aluno
     public function genero() {
 
         return $this->belongsTo('App\Genero')->first()->nome;
 
     }
-
+// Se tiver modalidade cadastrada, retorna o nome da mesma
     public function modalidade() {
 
         if($this->modalidade_id != NULL)
             return $this->belongsTo('App\Modalidade')->first()->nome;
-        else
-            return 'Não cadastrado';
+
+        return 'Não cadastrado';
 
     }
 
+    // Retorna login do aluno
     public function usuario() {
 
-        return $this->belongsTo('App\Usuario', 'usuario_id');
+        return $this->belongsTo('App\Usuario', 'usuario_id')->first()->login;
 
     }
 
@@ -96,10 +97,11 @@ class Aluno extends Model
         return $this->hasOne('App\AvaliacaoAluno', 'aluno_id')->first()->id;
     }
 
+//  Retorna o ID do grupo que o aluno faz parte, se fizer, do contrário retorna falso.
     public function isGrupo()
     {
 
-        $teste = $this->hasOne('App\GrupoAluno', 'aluno_id');
+        $teste = $this->hasOne('App\GrupoAluno', 'aluno_id')->first()->id;
         if($teste)
             return $teste;
         return false;

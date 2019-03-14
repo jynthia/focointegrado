@@ -26,13 +26,13 @@ class ExercicioSerie extends Model
 
     public function exercicio() {
 
-        return $this->belongsTo('App\Exercicio', 'exercicio_id');
+        return $this->belongsTo('App\Exercicio', 'exercicio_id')->first();
 
     }
 
     public function serie() {
 
-        return $this->belongsTo('App\Serie', 'serie_id');
+        return $this->belongsTo('App\Serie', 'serie_id')->first();
 
     }
 

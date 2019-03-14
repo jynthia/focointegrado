@@ -39,13 +39,13 @@ class Professor extends Model
 
     public function academia() {
 
-        return $this->belongsTo('App\Academia', 'local_treino_id');
+        return $this->belongsTo('App\Academia', 'local_treino_id')->first()->nome;
 
     }
 
     public function usuario() {
 
-        return $this->belongsTo('App\Usuario', 'usuario_id');
+        return $this->belongsTo('App\Usuario', 'usuario_id')->first()->login;
 
     }
 

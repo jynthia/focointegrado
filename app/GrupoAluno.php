@@ -24,13 +24,13 @@ class GrupoAluno extends Model
 
     public function aluno() {
 
-        return $this->belongsTo('App\Aluno', 'aluno_id');
+        return $this->belongsTo('App\Aluno', 'aluno_id')->first();
 
     }
 
     public function grupo() {
 
-        return $this->belongsTo('App\Grupo', 'grupo_id');
+        return $this->belongsTo('App\Grupo', 'grupo_id')->first();
 
     }
 }

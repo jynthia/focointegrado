@@ -27,6 +27,7 @@ class Serie extends Model
 
     }
 
+    // TODO: entender essas relações nos modulos de Serie, ExercicioSerie, GrupoAluno
     public function treino() {
 
         return $this->belongsTo('App\TreinoBase', 'treino_id');
