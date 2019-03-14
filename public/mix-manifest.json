@@ -1,3 +1,7 @@
 {
-    "/css/login/login.css": "/css/login/login.css"
+    "/css/login/login.css": "/css/login/login.css",
+    "/css/prof/prof-assets.css": "/css/prof/prof-assets.css",
+    "/css/prof/prof-styles.css": "/css/prof/prof-styles.css",
+    "/js/prof/prof-assets.js": "/js/prof/prof-assets.js",
+    "/js/prof/prof-custom.js": "/js/prof/prof-custom.js"
 }

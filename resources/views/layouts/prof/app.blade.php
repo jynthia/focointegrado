@@ -9,13 +9,14 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <title>{{ $dados['titulo'] }}</title>
-    <!-- Bootstrap Core CSS -->
 
-    <link href="{{asset('css/libs.css')}}" rel="stylesheet">
-    <!--[if lt IE 9]>
-    <script type="text/javascript" src="{{ asset('https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js') }}"></script>
-    <![endif]-->
+    <link href="{{asset('css/prof/prof-assets.css')}}" rel="stylesheet">
+    <link href="{{asset('css/prof/prof-styles.css')}}" rel="stylesheet">
+
+    {{--<!--[if lt IE 9]>--}}
+    {{--<script type="text/javascript" src="{{ asset('https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js') }}"></script>--}}
+    {{--<script type="text/javascript" src="{{ asset('https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js') }}"></script>--}}
+    {{--<![endif]-->--}}
 </head>
 
 <body class="fix-header">
@@ -45,7 +46,7 @@
                 <li>
 
                     <!--TODO: adicionar botão para sair-->
-                    <a class="profile-pic" href="#"> <img src="img/profile.jpg" alt="user-img" width="36" class="img-circle"><b class="hidden-xs">Cinthia</b></a>
+                    <a class="profile-pic" href="#"> <img src="{{asset('img/profile.jpg')}}" alt="user-img" width="36" class="img-circle"><b class="hidden-xs">Cinthia</b></a>
                 </li>
             </ul>
         </div>
@@ -102,7 +103,9 @@
 
 </div>
 
-<script src="{{asset('js/libs.js')}}"></script>
+<script src="{{asset('js/prof/prof-assets.js')}}"></script>
+<script src="{{asset('js/prof/prof-custom.js')}}"></script>
+
 
 </body>
 
