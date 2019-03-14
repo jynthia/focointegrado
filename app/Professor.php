@@ -45,10 +45,7 @@ class Professor extends Model
 
     public function usuario() {
 
-        if($this->usuario_id != NULL)
-            return $this->belongsTo('App\Usuario', 'usuario_id')->first()->login;
-
-        return 'Não cadastrado';
+        return $this->belongsTo('App\Usuario', 'usuario_id');
 
     }
 
