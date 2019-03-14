@@ -40,7 +40,7 @@ class Bioimpedancia extends Model
         'sl_hop',
         'triple_hop',
         'cross_over',
-        '6m_timed',
+        'm_timed',
         'aluno_id',
         'cadastrado_por'
     ];

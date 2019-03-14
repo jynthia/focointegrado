@@ -11,6 +11,7 @@ use App\HorarioAluno;
 use App\Academia;
 use App\Atratores;
 use App\Genero;
+use App\Bioimpedancia;
 
 
 class PaginasProfessorController extends Controller
@@ -79,7 +80,18 @@ class PaginasProfessorController extends Controller
 
     public function getBioimpedancia() {
 
-        return view('prof.bioimpedancia');
+        $professor = Professor::find(7);
+        $alunos = $professor->alunos;
+        $bioimpedancias = Bioimpedancia::where('cadastrado_por', $professor->usuario_id)->orderBy('created_at', 'desc')->get();
+
+        $dados = array(
+
+            'titulo' => 'Avaliações de Bioimpedância',
+            'bioimpedancias' => $bioimpedancias,
+            'alunos' => $alunos
+        );
+
+        return view('prof.bioimpedancia')->withDados($dados);
 
     }
 

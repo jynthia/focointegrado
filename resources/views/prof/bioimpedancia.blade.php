@@ -30,7 +30,7 @@
                                 <div class="modal-header">
 
                                     <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                    <h4 class="modal-title">Adicionar avaliação</h4>
+                                    <h4 class="modal-title">Adicionar Avaliação</h4>
 
                                 </div>
 
@@ -47,7 +47,11 @@
                                             <label for="aluno_id" class="control-label">Aluno</label>
                                             <select class="form-control" id="aluno_id" name="aluno">
 
-                                                <option value="1">Cinthia Campos</option>
+                                                @foreach($dados['alunos'] as $aluno)
+
+                                                    <option value="{{$aluno->id}}">{{$aluno->nome}}</option>
+
+                                                @endforeach
 
                                             </select>
                                         </div>
@@ -185,8 +189,11 @@
 
                     <div class="col-md-3 col-sm-4 col-xs-6 pull-right">
                         <select class="form-control pull-right row b-none">
-                            <option>Todos os alunos</option>
-                            <option>Cinthia Campos</option>
+                            <option value="0">Todos os alunos</option>
+
+                            @foreach($dados['alunos'] as $aluno)
+                                <option value="{{$aluno->id}}">{{$aluno->nome}}</option>
+                            @endforeach
                         </select>
                     </div>
                     <h3 class="box-title">Avaliações</h3>
@@ -204,76 +211,80 @@
 
                             <!-- TODO: adicionar links e espaço entre ações -->
 
-                            <tr data-toggle="collapse" data-target="#accordion" class="clickable">
-                                <td>1</td>
-                                <td>Cinthia Campos</td>
-                                <td>12/01/2019</td>
-                                <td><i class="fa fa-edit"></i><i class="fa fa-trash"></i></td>
-                            </tr>
+                            @foreach($dados['bioimpedancias'] as $bioimpedancia)
 
-                            <tr>
-                                <td colspan="4">
-                                    <div id="accordion" class="collapse">
+                                <tr data-toggle="collapse" data-target="#accordion" class="clickable">
+                                    <td>{{$bioimpedancia->id}}</td>
+                                    <td>{{$bioimpedancia->nome}}</td>
+                                    <td>{{$bioimpedancia->data}}</td>
+                                    <td><i class="fa fa-edit"></i><i class="fa fa-trash"></i></td>
+                                </tr>
 
-                                        <table class="table">
-                                            <tbody>
-                                            <tr>
-                                                <td><p>Peso: <span class="text-dark">12</span></p></td>
-                                                <td><p>Altura: <span class="text-dark">12</span></p></td>
-                                            </tr>
-                                            <tr>
-                                                <td><p>%Gordura Atual: <span class="text-dark">12</span></p></td>
-                                                <td><p>Metabolismo Basal: <span class="text-dark">12</span></p></td>
-                                            </tr>
-                                            <tr>
-                                                <td><p>% Água/ G. Visceral: <span class="text-dark">12</span></p></td>
-                                                <td><p>Massa Magra: <span class="text-dark">12</span></p></td>
-                                            </tr>
-                                            <tr>
-                                                <td><p>Massa Óssea: <span class="text-dark">12</span></p></td>
-                                                <td><p>Freq. Repouso: <span class="text-dark">12</span></p></td>
-                                            </tr>
-                                            <tr>
-                                                <td><p>PA Sistólica: <span class="text-dark">12</span></p></td>
-                                                <td><p>PA Diastólica: <span class="text-dark">12</span></p></td>
-                                            </tr>
-                                            <tr>
-                                                <td><p>Hrvariability Recovery Points: <span class="text-dark">12</span></p></td>
-                                                <td><p>rMSSD: <span class="text-dark">12</span></p></td>
-                                            </tr>
-                                            <tr>
-                                                <td><p>Romain Chair Bilateral: <span class="text-dark">12</span></p></td>
-                                                <td><p>Romain Chair Unilateral: <span class="text-dark">12</span></p></td>
-                                            </tr>
-                                            <tr>
-                                                <td><p>CMJ: <span class="text-dark">12</span></p></td>
-                                                <td><p>SJ: <span class="text-dark">12</span></p></td>
-                                            </tr>
-                                            <tr>
-                                                <td><p>RSI Stifness: <span class="text-dark">12</span></p></td>
-                                                <td><p>RSI Drop Jump: <span class="text-dark">12</span></p></td>
-                                            </tr>
+                                <tr>
+                                    <td colspan="4">
+                                        <div id="accordion" class="collapse">
 
-                                            <tr>
-                                                <td><p>Índice de Bosco: <span class="text-dark">12</span></p></td>
-                                                <td><p>Horizontal Jump Test: <span class="text-dark">12</span></p></td>
-                                            </tr>
-                                            <tr>
-                                                <td><p>SL Hop for Distance Test: <span class="text-dark">12</span></p></td>
-                                                <td><p>Triple Hop Test: <span class="text-dark">12</span></p></td>
-                                            </tr>
+                                            <table class="table">
+                                                <tbody>
+                                                <tr>
+                                                    <td><p>Peso: <span class="text-dark">{{$bioimpedancia->peso}}</span></p></td>
+                                                    <td><p>Altura: <span class="text-dark">{{$bioimpedancia->altura}}</span></p></td>
+                                                </tr>
+                                                <tr>
+                                                    <td><p>%Gordura Atual: <span class="text-dark">{{$bioimpedancia->gordura_atual}}</span></p></td>
+                                                    <td><p>Metabolismo Basal: <span class="text-dark">{{$bioimpedancia->metabolismo_basal}}</span></p></td>
+                                                </tr>
+                                                <tr>
+                                                    <td><p>% Água/ G. Visceral: <span class="text-dark">{{$bioimpedancia->agua_gordura_visceral}}</span></p></td>
+                                                    <td><p>Massa Magra: <span class="text-dark">{{$bioimpedancia->massa_magra}}</span></p></td>
+                                                </tr>
+                                                <tr>
+                                                    <td><p>Massa Óssea: <span class="text-dark">{{$bioimpedancia->massa_ossea}}</span></p></td>
+                                                    <td><p>Freq. Repouso: <span class="text-dark">{{$bioimpedancia->freq_repouso}}</span></p></td>
+                                                </tr>
+                                                <tr>
+                                                    <td><p>PA Sistólica: <span class="text-dark">{{$bioimpedancia->pa_sistolica}}</span></p></td>
+                                                    <td><p>PA Diastólica: <span class="text-dark">{{$bioimpedancia->pa_diastolica}}</span></p></td>
+                                                </tr>
+                                                <tr>
+                                                    <td><p>Hrvariability Recovery Points: <span class="text-dark">{{$bioimpedancia->hrvariability_recovery}}</span></p></td>
+                                                    <td><p>rMSSD: <span class="text-dark">{{$bioimpedancia->rmssd}}</span></p></td>
+                                                </tr>
+                                                <tr>
+                                                    <td><p>Romain Chair Bilateral: <span class="text-dark">{{$bioimpedancia->romain_chair_bi}}</span></p></td>
+                                                    <td><p>Romain Chair Unilateral: <span class="text-dark">{{$bioimpedancia->romain_chair_uni}}</span></p></td>
+                                                </tr>
+                                                <tr>
+                                                    <td><p>CMJ: <span class="text-dark">{{$bioimpedancia->cmj}}</span></p></td>
+                                                    <td><p>SJ: <span class="text-dark">{{$bioimpedancia->sj}}</span></p></td>
+                                                </tr>
+                                                <tr>
+                                                    <td><p>RSI Stifness: <span class="text-dark">{{$bioimpedancia->rsi_stifness}}</span></p></td>
+                                                    <td><p>RSI Drop Jump: <span class="text-dark">{{$bioimpedancia->rsi_drop_jump}}</span></p></td>
+                                                </tr>
 
-                                            <tr>
-                                                <td><p>Cross Over Hop Test: <span class="text-dark">12</span></p></td>
-                                                <td><p>6m Timed Hop Test: <span class="text-dark">12</span></p></td>
-                                            </tr>
+                                                <tr>
+                                                    <td><p>Índice de Bosco: <span class="text-dark">{{$bioimpedancia->indice_bosco}}</span></p></td>
+                                                    <td><p>Horizontal Jump Test: <span class="text-dark">{{$bioimpedancia->horizontal_jump}}</span></p></td>
+                                                </tr>
+                                                <tr>
+                                                    <td><p>SL Hop for Distance Test: <span class="text-dark">{{$bioimpedancia->sl_hop}}</span></p></td>
+                                                    <td><p>Triple Hop Test: <span class="text-dark">{{$bioimpedancia->triple_hop}}</span></p></td>
+                                                </tr>
 
-                                            </tbody>
-                                        </table>
+                                                <tr>
+                                                    <td><p>Cross Over Hop Test: <span class="text-dark">{{$bioimpedancia->cross_over}}</span></p></td>
+                                                    <td><p>6m Timed Hop Test: <span class="text-dark">{{$bioimpedancia->m_timed}}</span></p></td>
+                                                </tr>
 
-                                    </div>
-                                </td>
-                            </tr>
+                                                </tbody>
+                                            </table>
+
+                                        </div>
+                                    </td>
+                                </tr>
+
+                                @endforeach
 
                             </tbody>
                         </table>
