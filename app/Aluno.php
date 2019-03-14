@@ -85,16 +85,22 @@ class Aluno extends Model
 
     }
 
+    public function relatorioMovimento() {
+
+        return $this->hasOne('App\RelatorioMovimento', 'aluno_id');
+
+    }
+
 
     public function horarios() {
 
-        return $this->hasOne('App\HorarioAluno', 'aluno_id')->first()->id;
+        return $this->hasOne('App\HorarioAluno', 'aluno_id');
 
     }
 
     public function avaliacao() {
 
-        return $this->hasOne('App\AvaliacaoAluno', 'aluno_id')->first()->id;
+        return $this->hasOne('App\AvaliacaoAluno', 'aluno_id');
     }
 
 //  Retorna o ID do grupo que o aluno faz parte, se fizer, do contrário retorna falso.

@@ -229,30 +229,30 @@
                                                 <tr>
                                                     <td><p>CPF: <span class="text-dark">{{$aluno->cpf}}</span></p></td>
                                                     <td><p>Endereço: <span class="text-dark">{{$aluno->endereco}}</span></p></td>
-                                                </tr>git
-                                                <tr>
-                                                    <td colspan="2"><p>Objetivo: <span class="text-dark">{{$dados['avaliacoes']}}</span></p></td>
                                                 </tr>
                                                 <tr>
-                                                    <td colspan="2"><p>Atividades atuais: <span class="text-dark">Lorem Ipsum</span></p></td>
+                                                    <td colspan="2"><p>Objetivo: <span class="text-dark">{{$aluno->avaliacao['objetivo']}}</span></p></td>
                                                 </tr>
                                                 <tr>
-                                                    <td colspan="2"><p>Dores na coluna: <span class="text-dark">Lorem Ipsum</span></p></td>
+                                                    <td colspan="2"><p>Atividades atuais: <span class="text-dark">{{$aluno->avaliacao['atividades']}}</span></p></td>
                                                 </tr>
                                                 <tr>
-                                                    <td colspan="2"><p>Limitações ou lesão passada: <span class="text-dark">Lorem Ipsum</span></p></td>
+                                                    <td colspan="2"><p>Dores na coluna: <span class="text-dark">{{$aluno->avaliacao['dores']}}</span></p></td>
                                                 </tr>
                                                 <tr>
-                                                    <td colspan="2"><p>Escala de dor 1 a 10: <span class="text-dark">Lorem Ipsum</span></p></td>
+                                                    <td colspan="2"><p>Limitações ou lesão passada: <span class="text-dark">{{$aluno->avaliacao['limitacoes']}}</span></p></td>
                                                 </tr>
                                                 <tr>
-                                                    <td colspan="2"><p>Medicamento atual: <span class="text-dark">Lorem Ipsum</span></p></td>
+                                                    <td colspan="2"><p>Escala de dor 1 a 10: <span class="text-dark">{{$aluno->avaliacao['escala_dor']}}</span></p></td>
                                                 </tr>
                                                 <tr>
-                                                    <td colspan="2"><p>Alguma cirurgia recente: <span class="text-dark">Lorem Ipsum</span></p></td>
+                                                    <td colspan="2"><p>Medicamento atual: <span class="text-dark">{{$aluno->avaliacao['medicamento']}}</span></p></td>
                                                 </tr>
                                                 <tr>
-                                                    <td colspan="2"><p>Problema de saúde: <span class="text-dark">Lorem Ipsum</span></p></td>
+                                                    <td colspan="2"><p>Alguma cirurgia recente: <span class="text-dark">{{$aluno->avaliacao['cirurgia']}}</span></p></td>
+                                                </tr>
+                                                <tr>
+                                                    <td colspan="2"><p>Problema de saúde: <span class="text-dark">{{$aluno->avaliacao['historico']}}</span></p></td>
                                                 </tr>
                                             </table>
                                             <h4>Horário</h4>
@@ -269,17 +269,17 @@
                                                 </thead>
                                                 <tbody>
                                                 <tr>
-                                                    <td>12h</td>
-                                                    <td>12h</td>
-                                                    <td>12h</td>
-                                                    <td>12h</td>
-                                                    <td>12h</td>
+                                                    <td>{{$aluno->horarios['acordar']}}</td>
+                                                    <td>{{$aluno->horarios['trabalho']}}</td>
+                                                    <td>{{$aluno->horarios['estudo']}}</td>
+                                                    <td>{{$aluno->horarios['treino']}}</td>
+                                                    <td>{{$aluno->horarios['dormir']}}</td>
                                                 </tr>
                                                 </tbody>
                                             </table>
 
                                             <h4>Relatório de Movimento/Planejamento Base/IT Iluminator</h4>
-                                            <p>ajhdisuhdiufhisshfi</p>
+                                            <p>{{$aluno->relatorioMovimento['relatorio']}}</p>
 
 
                                         </div>
