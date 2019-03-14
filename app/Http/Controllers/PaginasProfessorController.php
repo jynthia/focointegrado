@@ -33,7 +33,8 @@ class PaginasProfessorController extends Controller
             'exercicios' => $exercicios,
             'modalidades' => $modalidades,
             'avaliacoes' => $avaliacoes,
-            'horarios' => $horarios
+            'horarios' => $horarios,
+            'titulo' => 'Início'
         );
         return view('prof.index')->withDados($dados);
 
@@ -47,7 +48,8 @@ class PaginasProfessorController extends Controller
         $dados = array(
 
             'professor' => $professor,
-            'usuario' => $usuario
+            'usuario' => $usuario,
+            'titulo' => 'Meu Perfil'
         );
 
         return view('prof.perfil')->withDados($dados);

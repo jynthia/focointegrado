@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>Meu Perfil</title>
+    <title>{{ $dados['titulo'] }}</title>
     <!-- Bootstrap Core CSS -->
 
     <link href="{{asset('css/libs.css')}}" rel="stylesheet">
