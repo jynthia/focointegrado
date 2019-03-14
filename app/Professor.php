@@ -45,7 +45,7 @@ class Professor extends Model
 
     public function usuario() {
 
-        return $this->belongsTo('App\Usuario', 'usuario_id')->first()->login;
+        return $this->belongsTo('App\Usuario', 'usuario_id');
 
     }
 
