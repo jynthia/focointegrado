@@ -81,7 +81,7 @@
 
                                         <div class="form-group">
                                             <label for="nascimento" class="control-label">Data de Nascimento</label>
-                                            <input type="date" class="form-control" id="nascimento" name="nascimento" placeholder="Data de nascimento">
+                                            <input class="date form-control"  type="text" id="datepicker" name="nascimento" placeholder="">
                                         </div>
 
                                         <div class="form-group">

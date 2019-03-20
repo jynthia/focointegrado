@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.prof.app')
 
 @section('content')
 
@@ -18,12 +18,12 @@
         <div class="row">
             <div class="col-md-4 col-xs-12">
                 <div class="white-box">
-                    <div class="user-bg"> <img width="100%" alt="user" src="img/img1.jpg">
+                    <div class="user-bg"> <img width="100%" alt="user" src="{{asset('img/img1.jpg')}}">
                         <div class="overlay-box">
                             <div class="user-content">
 
                                 <!-- TODO: add Modal para trocar de foto -->
-                                <a href="javascript:void(0)"><img src="img/profile.jpg" class="thumb-lg img-circle" alt="img"></a>
+                                <a href="javascript:void(0)"><img src="{{asset('img/profile.jpg')}}" class="thumb-lg img-circle" alt="img"></a>
                                 <h4 class="text-white">{{ $dados['professor']->nome }}</h4>
                                 <h5 class="text-white">{{ $dados['professor']->email }}</h5> </div>
                         </div>

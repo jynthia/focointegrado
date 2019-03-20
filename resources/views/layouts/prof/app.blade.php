@@ -29,12 +29,13 @@
                 <!-- Logo -->
                 <a class="logo" href="">
                     <!-- Logo icon image, you can use font-icon also -->
-                    <b>
-                        <img src="{{ asset('img/admin-logo.png') }}" alt="home" class="dark-logo" />
-                    </b>
+                    {{--<b>--}}
+                        {{--<img src="{{ asset('img/admin-logo.png') }}" alt="home" class="light-logo" />--}}
+                    {{--</b>--}}
+
                     <span class="hidden-xs">
-                            <img src="{{ asset('img/admin-logo.png') }}" alt="home" class="dark-logo" />
-                        </span>
+                            <img src="{{ asset('img/admin-logo.png') }}" alt="home" class="light-logo" />
+                    </span>
                 </a>
             </div>
             <!-- /Logo -->
@@ -62,21 +63,21 @@
             </div>
             <ul class="nav" id="side-menu">
                 <li style="padding: 70px 0 0;">
-                    <a href="index.html" class="waves-effect"><i class="fa fa-clock-o fa-fw" aria-hidden="true"></i>Início</a>
+                    <a href="/prof" class="waves-effect"><i class="fa fa-clock-o fa-fw" aria-hidden="true"></i>Início</a>
                 </li>
                 <li>
-                    <a href="profile.html" class="waves-effect"><i class="fa fa-user fa-fw" aria-hidden="true"></i>Perfil</a>
+                    <a href="/prof/perfil" class="waves-effect"><i class="fa fa-user fa-fw" aria-hidden="true"></i>Perfil</a>
                 </li>
                 <li>
-                    <a href="exercicios.html" class="waves-effect"><i class="fa fa-table fa-fw" aria-hidden="true"></i>Exercícios</a>
+                    <a href="/prof/exercicios" class="waves-effect"><i class="fa fa-table fa-fw" aria-hidden="true"></i>Exercícios</a>
                 </li>
 
                 <li>
                     <a data-toggle="collapse" data-target="#accordion_fichas" class="waves-effect clickable"><i class="fa fa-table fa-fw" aria-hidden="true"></i>Fichas</a>
                     <div id="accordion_fichas" class="collapse">
                         <ul class="nav">
-                            <li><a href="fichas.html" class="waves-effect">Alunos</a></li>
-                            <li><a href="fichas_grupo.html" class="waves-effect">Grupos</a></li>
+                            <li><a href="/prof/fichas" class="waves-effect">Alunos</a></li>
+                            <li><a href="/prof/fichas_grupo" class="waves-effect">Grupos</a></li>
                         </ul>
                     </div>
                 </li>
@@ -85,8 +86,8 @@
                     <a data-toggle="collapse" data-target="#accordion_avaliacoes"  class="waves-effect clickable"><i class="fa fa-table fa-fw" aria-hidden="true"></i>Avaliações</a>
                     <div id="accordion_avaliacoes" class="collapse">
                         <ul class="nav">
-                            <li><a href="bioimpedancia.html" class="waves-effect">Avaliação (Bioimpedância)</a></li>
-                            <li><a href="atratores_biomecanica.html" class="waves-effect">Atratores e Biomecânica</a></li>
+                            <li><a href="/prof/bioimpedancia" class="waves-effect">Avaliação (Bioimpedância)</a></li>
+                            <li><a href="/prof/atratores" class="waves-effect">Atratores e Biomecânica</a></li>
                         </ul>
                     </div>
                 </li>

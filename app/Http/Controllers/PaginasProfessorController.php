@@ -45,6 +45,20 @@ class PaginasProfessorController extends Controller
 
     }
 
+    public function getExercicios() {
+
+        $exercicios = Exercicio::all();
+
+        $dados = array (
+
+            'exercicios' => $exercicios,
+            'titulo' => 'Exercícios'
+
+        );
+
+        return view('prof.exercicios')->withDados($dados);
+    }
+
     public function getPerfil() {
 
         $professor = Professor::find(7);

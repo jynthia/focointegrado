@@ -28,3 +28,5 @@ Route::get('/prof/fichas_grupo', 'PaginasProfessorController@getFichasGrupo');
 Route::get('/prof/perfil', 'PaginasProfessorController@getPerfil');
 
 
+
+
