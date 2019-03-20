@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Aluno;
 
 class AlunoController extends Controller
 {
@@ -34,7 +35,7 @@ class AlunoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
     }
 
     /**
@@ -79,6 +80,9 @@ class AlunoController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $aluno = Aluno::find($id);
+        $aluno->delete();
+
+        return redirect('/prof')->with('success', 'Aluno foi deletado com sucesso!');
     }
 }
