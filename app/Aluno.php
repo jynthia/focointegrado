@@ -64,7 +64,7 @@ class Aluno extends Model
     // Retorna login do aluno
     public function usuario() {
 
-        return $this->belongsTo('App\Usuario', 'usuario_id')->first()->login;
+        return $this->belongsTo('App\User', 'usuario_id')->first()->name;
 
     }
 

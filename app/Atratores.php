@@ -81,7 +81,7 @@ class Atratores extends Model
 // retorna login do usuário que cadastrou essa avaliação
     public function cadastradoPor() {
 
-        return $this->belongsTo('App\Usuario', 'cadastrado_por')->first()->login;
+        return $this->belongsTo('App\User', 'cadastrado_por')->first()->name;
 
     }
 // retorna nome do aluno

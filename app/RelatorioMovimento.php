@@ -28,7 +28,7 @@ class RelatorioMovimento extends Model
 
     public function cadastradoPor() {
 
-        return $this->belongsTo('App\Usuario', 'cadastrado_por')->first()->login;
+        return $this->belongsTo('App\User', 'cadastrado_por')->first()->name;
 
     }
 
