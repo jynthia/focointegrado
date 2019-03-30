@@ -15,6 +15,8 @@ Route::get('/', 'PaginasController@index');
 
 Route::get('/contato', 'PaginasController@contato');
 
+Route::get('/programas', 'PaginasController@programas');
+
 Route::get('/login', 'PaginasController@getLogin');
 
 Route::get('/prof/', 'PaginasProfessorController@getIndex');

@@ -13,6 +13,21 @@ const mix = require('laravel-mix');
 
 mix.styles([
 
+    'public/css/programs/css/animate.css',
+    'public/css/programs/css/icomoon.css',
+    'public/css/programs/css/bootstrap.css',
+    'public/css/programs/css/magnific-popup.css',
+    'public/css/programs/css/flexslider.css',
+    'public/css/programs/css/owl.carousel.min.css',
+    'public/css/programs/css/owl.theme.default.min.css',
+    'public/css/programs/fonts/flaticon/font/flaticon.css',
+    'public/css/programs/css/style.css',
+    'public/css/login/styles.css'
+
+], 'public/css/programs.css');
+
+mix.styles([
+
     'public/css/contact.css',
     'public/fonts/Linearicons-Free-v1.0.0/icon-font.min.css',
     'public/css/prof/animate/css',
@@ -70,4 +85,23 @@ mix.scripts([
 mix.scripts([
     'public/js/prof/custom.min.js',
     'public/js/prof/dashboard1.js'
-], 'public/js/prof/prof-custom.js')
+], 'public/js/prof/prof-custom.js');
+
+mix.scripts([
+    'public/css/programs/js/modernizr-2.6.2.min.js',
+    'public/css/programs/js/respond.min.js'
+], 'public/css/programs/js/start.js');
+
+mix.scripts([
+    'public/css/programs/js/jquery.min.js',
+    'public/css/programs/js/jquery.easing.1.3.js',
+    'public/css/programs/js/bootstrap.min.js',
+    'public/css/programs/js/jquery.waypoints.min.js',
+    'public/css/programs/js/jquery.stellar.min.js',
+    'public/css/programs/js/jquery.flexslider-min.js',
+    'public/css/programs/js/owl.carousel.min.js',
+    'public/css/programs/js/jquery.magnific-popup.min.js',
+    'public/css/programs/js/magnific-popup-options.js',
+    'public/css/programs/js/jquery.countTo.js',
+    'public/css/programs/js/main.js'
+], 'public/css/programs/js/programs.js');
