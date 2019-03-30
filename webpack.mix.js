@@ -13,6 +13,17 @@ const mix = require('laravel-mix');
 
 mix.styles([
 
+    'public/css/contact.css',
+    'public/fonts/Linearicons-Free-v1.0.0/icon-font.min.css',
+    'public/css/prof/animate/css',
+    'public/css/css-hamburgers/hamburgers.min.css',
+    'public/css/animsition/css/animsition.min.css',
+    'public/css/select2/select2.min.css'
+
+
+], 'public/css/contacts.css');
+mix.styles([
+
     'public/css/login/bootstrap.css',
     'public/css/login/main.css',
     'public/css/login/styles.css',

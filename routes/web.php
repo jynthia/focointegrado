@@ -13,6 +13,8 @@
 
 Route::get('/', 'PaginasController@index');
 
+Route::get('/contato', 'PaginasController@contato');
+
 Route::get('/login', 'PaginasController@getLogin');
 
 Route::get('/prof/', 'PaginasProfessorController@getIndex');
@@ -28,6 +30,7 @@ Route::get('/prof/fichas', 'PaginasProfessorController@getFichas');
 Route::get('/prof/fichas_grupo', 'PaginasProfessorController@getFichasGrupo');
 
 Route::get('/prof/perfil', 'PaginasProfessorController@getPerfil');
+
 
 Route::resource('prof/aluno', 'AlunoController');
 

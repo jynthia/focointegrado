@@ -20,4 +20,9 @@ class PaginasController extends Controller
 
     }
 
+    public function contato() {
+
+        return view('contato');
+    }
+
 }
