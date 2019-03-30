@@ -11,6 +11,8 @@
 |
 */
 
+Route::get('/', 'PaginasController@index');
+
 Route::get('/login', 'PaginasController@getLogin');
 
 Route::get('/prof/', 'PaginasProfessorController@getIndex');
@@ -29,6 +31,4 @@ Route::get('/prof/perfil', 'PaginasProfessorController@getPerfil');
 
 Route::resource('prof/aluno', 'AlunoController');
 
-Auth::routes(['register' => false]);
-
-Route::get('/home', 'HomeController@index')->name('home');
+//Auth::routes(['register' => false]);
