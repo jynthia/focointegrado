@@ -71,3 +71,25 @@
      });
      sparklineLogin();
  });
+
+ $(document).ready(function(){
+     $("#add-semana").click(function(e){
+         e.preventDefault();
+         var numberOfSemanas = $("#adicionaPlan").find("input[name^='data[semana]']").length;
+         numberOfSemanas === 12 ? alert('Máximo de 12 semanas!') : '';
+         var label = '<label for="data[semana][' + numberOfSemanas + ']">Semana ' + (numberOfSemanas + 1) + '</label> ';
+         var input = '<input type="text" name="data[semana][' + numberOfSemanas + ']" id="data[semana][' + numberOfSemanas + ']" />';
+         var removeButton = '<button class="remove-semana">Remover</button>';
+         var html = "<div class='semana'>" + label + input + removeButton + "</div>";
+         $("#adicionaPlan").find("#add-semana").before(html);
+     });
+ });
+
+ $(document).on("click", ".remove-semana",function(e){
+     e.preventDefault();
+     $(this).parents(".semana").remove();
+     //update labels
+     $("#adicionaPLan").find("label[for^='data[semana]']").each(function(){
+         $(this).html("Semana " + ($(this).parents('.semana').index() + 1));
+     });
+ });

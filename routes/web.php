@@ -37,6 +37,8 @@ Route::get('/prof/diarios', 'PaginasProfessorController@getDiarios');
 
 Route::get('/prof/diarios/{id}', 'PaginasProfessorController@getDiariosAluno');
 
+Route::get('/prof/planejamento', 'PaginasProfessorController@getPlanejamento');
+
 Route::resource('prof/aluno', 'AlunoController');
 
 //Auth::routes(['register' => false]);

@@ -159,6 +159,17 @@ class PaginasProfessorController extends Controller
 
     }
 
+    public function getPlanejamento() {
+
+        $dados = array(
+
+            'titulo' => 'Planejamento'
+
+        );
+        return view('prof.planejamento')->withDados($dados);
+
+    }
+
     public function getDiariosAluno($id) {
 
         $dados = array(
