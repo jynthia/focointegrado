@@ -148,5 +148,11 @@ class PaginasProfessorController extends Controller
 
     }
 
+    public function getDiarios() {
+
+        return view('prof.diarios');
+        
+    }
+
 
 }

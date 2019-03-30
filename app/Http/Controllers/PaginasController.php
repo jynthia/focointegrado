@@ -25,4 +25,9 @@ class PaginasController extends Controller
         return view('contato');
     }
 
+    public function programas() {
+
+        return view('programas');
+    }
+
 }
