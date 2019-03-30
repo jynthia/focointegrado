@@ -150,8 +150,22 @@ class PaginasProfessorController extends Controller
 
     public function getDiarios() {
 
-        return view('prof.diarios');
-        
+        $dados = array(
+
+            'titulo' => 'Diários de treino'
+
+        );
+        return view('prof.diarios')->withDados($dados);
+
+    }
+
+    public function getDiariosAluno($id) {
+
+        $dados = array(
+            'titulo' => $id
+        );
+
+        return view('prof.diario_aluno')->withDados($dados);
     }
 
 

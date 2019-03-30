@@ -60,7 +60,8 @@ mix.styles([
     'public/css/prof/styles-prof.css',
     'public/css/prof/style.css',
     'public/css/prof/animate/css',
-    'public/css/prof/colors/default.css'
+    'public/css/prof/colors/default.css',
+    'public/css/prof/custom.css'
 
 ], 'public/css/prof/prof-styles.css');
 

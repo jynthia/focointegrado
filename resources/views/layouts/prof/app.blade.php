@@ -69,15 +69,15 @@
                     <a href="/prof/perfil" class="waves-effect"><i class="fa fa-user fa-fw" aria-hidden="true"></i>Perfil</a>
                 </li>
                 <li>
-                    <a href="/prof/exercicios" class="waves-effect"><i class="fa fa-table fa-fw" aria-hidden="true"></i>Exercícios</a>
+                    <a href="/prof/exercicios" class="waves-effect"><i class="fa fa-file-o fa-fw" aria-hidden="true"></i>Exercícios</a>
                 </li>
 
                 <li>
-                    <a data-toggle="collapse" data-target="#accordion_fichas" class="waves-effect clickable"><i class="fa fa-table fa-fw" aria-hidden="true"></i>Fichas</a>
+                    <a data-toggle="collapse" data-target="#accordion_fichas" class="waves-effect clickable"><i class="fa fa-tasks fa-fw" aria-hidden="true"></i>Fichas</a>
                     <div id="accordion_fichas" class="collapse">
                         <ul class="nav">
-                            <li><a href="/prof/fichas" class="waves-effect">Alunos</a></li>
-                            <li><a href="/prof/fichas_grupo" class="waves-effect">Grupos</a></li>
+                            <li><a href="/prof/fichas" >Alunos</a></li>
+                            <li><a href="/prof/fichas_grupo" >Grupos</a></li>
                         </ul>
                     </div>
                 </li>
@@ -86,11 +86,16 @@
                     <a data-toggle="collapse" data-target="#accordion_avaliacoes"  class="waves-effect clickable"><i class="fa fa-table fa-fw" aria-hidden="true"></i>Avaliações</a>
                     <div id="accordion_avaliacoes" class="collapse">
                         <ul class="nav">
-                            <li><a href="/prof/bioimpedancia" class="waves-effect">Avaliação (Bioimpedância)</a></li>
-                            <li><a href="/prof/atratores" class="waves-effect">Atratores e Biomecânica</a></li>
+                            <li><a href="/prof/bioimpedancia" >Avaliação (Bioimpedância)</a></li>
+                            <li><a href="/prof/atratores" >Atratores e Biomecânica</a></li>
                         </ul>
                     </div>
                 </li>
+
+                <li>
+                    <a href="/prof/diarios" class="waves-effect"><i class="fa fa-clock-o fa-fw" aria-hidden="true"></i>Diários</a>
+                </li>
+
 
             </ul>
         </div>

@@ -16,25 +16,22 @@
 
                 </button>
 
-                <!-- TODO: ajeitar a responsividade -->
-                <!-- TODO: ALTERAR CORES -->
-
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ml-auto navbar-right">
                         <li class="nav-item active">
-                            <a class="nav-link" href="index.html">Quem Somos <span class="sr-only">(current)</span></a>
+                            <a class="nav-link" href="/">Quem Somos <span class="sr-only">(current)</span></a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="programs.html">Programas</a>
+                            <a class="nav-link" href="/programas">Programas</a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="contact.html">Contato</a>
+                            <a class="nav-link" href="/contato">Contato</a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="login.html">Login</a>
+                            <a class="nav-link" href="/login">Login</a>
                         </li>
 
                     </ul>
@@ -63,7 +60,7 @@
                 <a href="login.html">Login</a>
             </p>
 
-            <p class="footer-company-name">Foco Integrado &copy; 2018</p>
+            <p class="footer-company-name">Foco Integrado &copy; 2019</p>
         </div>
 
         <div class="footer-center">

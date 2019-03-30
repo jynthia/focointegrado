@@ -33,6 +33,9 @@ Route::get('/prof/fichas_grupo', 'PaginasProfessorController@getFichasGrupo');
 
 Route::get('/prof/perfil', 'PaginasProfessorController@getPerfil');
 
+Route::get('/prof/diarios', 'PaginasProfessorController@getDiarios');
+
+Route::get('/prof/diarios/{id}', 'PaginasProfessorController@getDiariosAluno');
 
 Route::resource('prof/aluno', 'AlunoController');
 

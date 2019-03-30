@@ -5,11 +5,10 @@ $(document).ready(function(){"use strict";var e=$("body");$(function(){$(".prelo
 
 
      //ct-visits
-     new Chartist.Line('#ct-visits', {
-         labels: ['2008', '2009', '2010', '2011', '2012', '2013', '2014', '2015'],
+     new Chartist.Line('#cms-treino', {
+         labels: ['12/03', '11/03', '10/03', '09/03', '08/03', '07/03', '04/03', '02/03'],
          series: [
     [5, 2, 7, 4, 5, 3, 5, 4]
-    , [2, 5, 2, 6, 2, 5, 2, 4]
   ]
      }, {
          top: 0,
@@ -21,7 +20,7 @@ $(document).ready(function(){"use strict";var e=$("body");$(function(){$(".prelo
   ],
          axisY: {
              labelInterpolationFnc: function (value) {
-                 return (value / 1) + 'k';
+                 return (value / 1);
              }
          },
          showArea: true
