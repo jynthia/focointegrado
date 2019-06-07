@@ -96,6 +96,10 @@
                     <a href="/prof/diarios" class="waves-effect"><i class="fa fa-clock-o fa-fw" aria-hidden="true"></i>Diários</a>
                 </li>
 
+                <li>
+                    <a href="/prof/planejamento" class="waves-effect"><i class="fa fa-calendar fa-fw" aria-hidden="true"></i>Planejamento</a>
+                </li>
+
 
             </ul>
         </div>
