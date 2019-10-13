@@ -12,15 +12,14 @@ const mix = require('laravel-mix');
  */
 
 mix.styles([
-
+    'public/css/login/bootstrap.css',
+    'public/css/programs/fonts/flaticon/font/flaticon.css',
     'public/css/programs/css/animate.css',
     'public/css/programs/css/icomoon.css',
-    'public/css/programs/css/bootstrap.css',
     'public/css/programs/css/magnific-popup.css',
     'public/css/programs/css/flexslider.css',
     'public/css/programs/css/owl.carousel.min.css',
     'public/css/programs/css/owl.theme.default.min.css',
-    'public/css/programs/fonts/flaticon/font/flaticon.css',
     'public/css/programs/css/style.css',
     'public/css/login/styles.css'
 

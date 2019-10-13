@@ -2084,3 +2084,7 @@
 .fa-percent:before {
   content: "\f295";
 }
+
+.fa-dumbbell:before {
+  content: "\f44b";
+}

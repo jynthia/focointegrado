@@ -19,6 +19,8 @@ Route::get('/programas', 'PaginasController@programas');
 
 Route::get('/login', 'PaginasController@getLogin');
 
+Route::get('/education', 'PaginasController@education');
+
 Route::get('/prof/', 'PaginasProfessorController@getIndex');
 
 Route::get('/prof/atratores', 'PaginasProfessorController@getAtratores');

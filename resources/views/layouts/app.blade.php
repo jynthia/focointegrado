@@ -1,10 +1,10 @@
 @yield('head')
 
-<body>
+<body style="padding-top: 80px;">
 
     <div class="container-fluid">
 
-            <nav class="navbar navbar-expand-lg">
+            <nav class="navbar navbar-light fixed-top navbar-expand-lg">
 
                 <div class="navbar-brand">
                     <img class="img-responsive" id="logo" src="img/foco_preto.png">
@@ -27,6 +27,10 @@
                         </li>
 
                         <li class="nav-item">
+                            <a class="nav-link" href="/education">Education</a>
+                        </li>
+
+                        <li class="nav-item">
                             <a class="nav-link" href="/contato">Contato</a>
                         </li>
 
@@ -43,7 +47,7 @@
     @yield('content')
 </div>
 
-
+<div class="footer-container">
     <footer class="footer-distributed">
 
         <div class="footer-left">
@@ -72,7 +76,7 @@
 
             <div>
                 <i class="fa fa-phone"></i>
-                <p>+55 86 998240682</p>
+                <p>+55 86 99824-0682</p>
             </div>
 
             <div>
@@ -89,6 +93,7 @@
         </div>
 
     </footer>
+</div>
 
 </body>
 

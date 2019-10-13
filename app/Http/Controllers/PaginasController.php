@@ -30,4 +30,9 @@ class PaginasController extends Controller
         return view('programas');
     }
 
+    public function education() {
+
+        return view('education');
+    }
+
 }

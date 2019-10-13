@@ -26,21 +26,21 @@
             <div class="wrap-input100 validate-input" data-validate="Nome é necessário">
                 <input class="input100" id="name" type="text" name="name" placeholder="Nome">
                 <label class="label-input100" for="name">
-                    <span class="lnr lnr-user"></span>
+                    <span class="fa fa-user"></span>
                 </label>
             </div>
 
             <div class="wrap-input100 validate-input" data-validate = "Insira um e-mail válido">
                 <input class="input100" id="email" type="text" name="email" placeholder="E-mail">
                 <label class="label-input100" for="email">
-                    <span class="lnr lnr-envelope"></span>
+                    <span class="fa fa-paper-plane"></span>
                 </label>
             </div>
 
             <div class="wrap-input100 validate-input" data-validate = "Telefone é necessário">
                 <input class="input100" id="phone" type="text" name="phone" placeholder="Telefone">
                 <label class="label-input100" for="phone">
-                    <span class="lnr lnr-phone-handset"></span>
+                    <span class="fa fa-phone-square"></span>
                 </label>
             </div>
 
@@ -73,18 +73,5 @@
 <!--===============================================================================================-->
 <script src="vendor/jquery/jquery-3.2.1.min.js"></script>
 <!--===============================================================================================-->
-<script src="vendor/animsition/js/animsition.min.js"></script>
-<!--===============================================================================================-->
-<script src="vendor/bootstrap/js/popper.js"></script>
-<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
-<!--===============================================================================================-->
-<script src="vendor/select2/select2.min.js"></script>
-<!--===============================================================================================-->
-<script src="vendor/daterangepicker/moment.min.js"></script>
-<script src="vendor/daterangepicker/daterangepicker.js"></script>
-<!--===============================================================================================-->
-<script src="vendor/countdowntime/countdowntime.js"></script>
-<!--===============================================================================================-->
-<script src="js/main.js"></script>
 
 @stop
