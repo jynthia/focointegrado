@@ -26,17 +26,17 @@
                             <a class="nav-link" href="/programas">Programas</a>
                         </li>
 
-                        <li class="nav-item">
-                            <a class="nav-link" href="/education">Education</a>
-                        </li>
+                        {{--<li class="nav-item">--}}
+                            {{--<a class="nav-link" href="/education">Education</a>--}}
+                        {{--</li>--}}
 
                         <li class="nav-item">
                             <a class="nav-link" href="/contato">Contato</a>
                         </li>
 
-                        <li class="nav-item">
-                            <a class="nav-link" href="/login">Login</a>
-                        </li>
+                        {{--<li class="nav-item">--}}
+                            {{--<a class="nav-link" href="/login">Login</a>--}}
+                        {{--</li>--}}
 
                     </ul>
                 </div>
@@ -61,7 +61,7 @@
                 ·
                 <a href="contact.html">Contato</a>
                 ·
-                <a href="login.html">Login</a>
+                {{--<a href="login.html">Login</a>--}}
             </p>
 
             <p class="footer-company-name">Foco Integrado &copy; 2019</p>
