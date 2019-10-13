@@ -159,7 +159,7 @@
                     <p>Direcionamos os funcionários para uma saúde e desempenho otimizados com uma abordagem melhor ao bem-estar corporativo.</p>
                     <p>Comparado aos tradicionais programas de bem-estar corporativo, a FOCO Integrado gera mais resultados de saúde, diminui mais fatores de risco de lesão e gera maior retorno sobre o investimento.</p>
                     <p> E os funcionários adoram compartilhar o quanto desfrutam de estilos de vida mais saudáveis e duradouros.</p>
-                    <p><a href="/contato" class="btn-learn">Solicite uma visita <i class="icon-arrow-right3"></i></a></p>
+                    <p><a href="/contato" class="btn-learn">Solicite uma visita <i class="fa fa-long-arrow-right"></i></a></p>
                 </div>
         </div>
 
