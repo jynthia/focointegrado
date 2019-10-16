@@ -87,10 +87,10 @@ mix.scripts([
     'public/js/prof/dashboard1.js'
 ], 'public/js/prof/prof-custom.js');
 
+
 mix.scripts([
-    'public/css/programs/js/modernizr-2.6.2.min.js',
-    'public/css/programs/js/respond.min.js'
-], 'public/css/programs/js/start.js');
+    'public/js/main.js'
+], 'public/js/mains.js');
 
 mix.scripts([
     'public/css/programs/js/jquery.min.js',
