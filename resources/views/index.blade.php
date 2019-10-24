@@ -13,7 +13,7 @@
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    <script src="{{asset('css/programs/js/mains.js')}}"></script>
+    <script src="{{asset('js/mains.js')}}"></script>
     <title>Foco Integrado</title>
 
 </head>
@@ -79,9 +79,8 @@
                 <img  src="img/test.jpg"  class="areas-img">
                     <div class="texto-central">KIDS</div>
                     <div id="kids" class="overlay-text">
-                        <div class="text">Programa de atendimento em grupo destinado a desenvolver habilidades atléticas de formação básica motora. Dessa forma, a
-                            criança se desenvolve de forma mais saudável sem comprometer o crescimento morfológico e criando potenciais desenvolturas para esporte e
-                            uma vida mais saudável!
+                        <div class="text">Atendimento em grupo destinado a desenvolver habilidades atléticas de formação básica motora. A
+                            criança se desenvolve de forma mais saudável sem comprometer o crescimento e potencial para vida saudável.
                         </div>
                     </div>
                 </a></div>

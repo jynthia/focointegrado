@@ -60,7 +60,6 @@
                 <a href="programs.html">Programas</a>
                 ·
                 <a href="contact.html">Contato</a>
-                ·
                 {{--<a href="login.html">Login</a>--}}
             </p>
 

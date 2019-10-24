@@ -32,7 +32,7 @@
                         <li>
                             <div id="sparklinedash2"></div>
                         </li>
-                        <li class="text-right"><i class="ti-arrow-up text-purple"></i> <span class="counter text-purple">{{ count($dados['fichas_ativas']) }}</span></li>
+                        <li class="text-right"><i class="ti-arrow-up text-purple"></i> <span class="counter text-purple">78</span></li>
                     </ul>
                 </div>
             </div>
