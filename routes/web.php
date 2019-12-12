@@ -43,4 +43,8 @@ Route::get('/prof/planejamento', 'PaginasProfessorController@getPlanejamento');
 
 Route::resource('prof/aluno', 'AlunoController');
 
-//Auth::routes(['register' => false]);
+
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

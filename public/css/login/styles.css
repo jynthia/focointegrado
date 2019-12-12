@@ -272,12 +272,21 @@ ul.nav a:hover {
 
     padding: 30px;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
 }
 
 .text-performance h2 {
 
     margin: 30px;
+    max-width: 65%;
+    flex-grow: 0;
+    flex-basis: 100%;
+    flex-shrink: 1;
+    align-self: center;
+
 }
 
 
@@ -518,7 +527,7 @@ blockquote {
     display:-webkit-flex;
     flex-direction: column;
     -webkit-flex-direction: column;
-    height: 675px;
+    max-height: 675px;
 
 }
 
@@ -588,6 +597,7 @@ blockquote {
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
     text-align: center;
+    margin: 5px;
 }
 
 #spacer {
@@ -668,16 +678,17 @@ blockquote {
         margin-top: 15px;
     }
 
-    .coluna-dir .img {
+    .coluna-dir img {
 
-        min-height: 400px;
+       height: 230px;
     }
 
-    .coluna-dir {
+    #spacer {
 
-        max-height: 1600px;
-        height: 200%;
+        height: 310px;
+
     }
+
 
     .footer-right iframe {
         max-width: 350px;
@@ -726,9 +737,9 @@ blockquote {
 
     .overlay-text .text {
 
-        font-size: 15px;
+        font-size: 17px;
         width: 90%;
-        height: 90%;
+        height: 95%;
 
     }
 

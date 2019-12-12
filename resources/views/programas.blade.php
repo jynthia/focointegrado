@@ -6,14 +6,13 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Programas</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,700,900" rel="stylesheet">
     <link rel="stylesheet" href="{{asset('css/programs.css')}}">
-    <script src="{{asset('css/programs/js/programs.js')}}"></script>
+    <script type="text/javascript" src="{{asset('js/programs.js')}}"></script>
     <script src="https://kit.fontawesome.com/fa06c13c03.js" crossorigin="anonymous"></script>
 
 </head>
@@ -167,8 +166,5 @@
 </div>
 
 @stop
-
-<script src="{{asset('css/programs/js/programs.js')}}"></script>
-
 
 
