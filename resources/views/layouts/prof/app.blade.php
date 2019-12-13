@@ -43,11 +43,15 @@
                 <li>
                     <form role="search" class="app-search hidden-sm hidden-xs m-r-10">
                         <input type="text" placeholder="Search..." class="form-control"> <a href=""><i class="fa fa-search"></i></a> </form>
-                </li>
+                </li>l
                 <li>
-
-                    <!--TODO: adicionar botão para sair-->
-                    <a class="profile-pic" href="#"> <img src="{{asset('img/profile.jpg')}}" alt="user-img" width="36" class="img-circle"><b class="hidden-xs">Cinthia</b></a>
+                    <!--TODO: estilizar botao de sair-->
+                    <div class="dropdown show">
+                        <a class="profile-pic dropdown-toggle" role="button" id="dropdownMenuLink" data-toggle="dropdown" href="#"> <img src="{{asset('img/profile.jpg')}}" alt="user-img" width="36" class="img-circle"><b class="hidden-xs">Cinthia</b></a>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                            <a class="dropdown-item" href="{{ url('/logout') }}">Sair</a>
+                        </div>
+                    </div>
                 </li>
             </ul>
         </div>
@@ -82,6 +86,7 @@
                     </div>
                 </li>
 
+                {{-- TODO: resolver bug de fichas e avaliações com faixa aparecendo--}}
                 <li>
                     <a data-toggle="collapse" data-target="#accordion_avaliacoes"  class="waves-effect clickable"><i class="fa fa-table fa-fw" aria-hidden="true"></i>Avaliações</a>
                     <div id="accordion_avaliacoes" class="collapse">

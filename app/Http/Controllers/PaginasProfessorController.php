@@ -16,7 +16,12 @@ use App\Ficha;
 
 class PaginasProfessorController extends Controller
 {
-    public function getIndex() {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
+    public function index() {
 
         $professor = Professor::find(7);
         $fichas_ativas = $professor->fichas;

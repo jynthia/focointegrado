@@ -21,7 +21,7 @@ Route::get('/login', 'PaginasController@getLogin');
 
 Route::get('/education', 'PaginasController@education');
 
-Route::get('/prof/', 'PaginasProfessorController@getIndex');
+Route::get('/prof/', 'PaginasProfessorController@index');
 
 Route::get('/prof/atratores', 'PaginasProfessorController@getAtratores');
 
@@ -48,6 +48,3 @@ Route::resource('prof/aluno', 'AlunoController');
 Auth::routes();
 
 Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout');
-
-
-Route::get('/home', 'HomeController@index')->name('home');
