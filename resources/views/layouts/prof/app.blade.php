@@ -100,6 +100,11 @@
                     <a href="/prof/planejamento" class="waves-effect"><i class="fa fa-calendar fa-fw" aria-hidden="true"></i>Planejamento</a>
                 </li>
 
+                <li>
+                    {{-- TODO: transformar registro em restrito a usuários (master) --}}
+                    <a href="/register" class="waves-effect"><i class="fa fa-list fa-fw" aria-hidden="true"></i>Registro de Professores</a>
+                </li>
+
 
             </ul>
         </div>

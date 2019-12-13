@@ -49,6 +49,9 @@ class LoginController extends Controller
             case 'P':
                 return '/prof';
                 break;
+            case 'M':
+                return '/prof';
+                break;
             default:
                 return '/login';
                 break;
