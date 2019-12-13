@@ -9163,7 +9163,7 @@ iframe {
 [ Text ]*/
 .txt1 {
   font-family: "Bebas Neue";
-  font-size: 15px;
+  font-size: 20px;
   line-height: 1.4;
   color: white;
 }
@@ -9233,7 +9233,7 @@ iframe {
 [ login more ]*/
 .login100-more {
   width: calc(100% - 560px);
-  background-image: url("../../img/login.png");
+  background-image: url("../../img/login.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -9262,8 +9262,13 @@ iframe {
   width: 560px;
   min-height: 100vh;
   display: block;
-  background-image: linear-gradient(#954985, #3E9DB0);
+  background-color: black;
   padding: 173px 55px 55px 55px;
+}
+
+.login100-form .form-check:hover {
+
+  color: #954985;
 }
 
 .login100-form-title {
@@ -9334,7 +9339,14 @@ input.input100 {
   -o-transition: all 0.4s;
   -moz-transition: all 0.4s;
   transition: all 0.4s;
+
 }
+
+.input100::placeholder {
+
+  opacity: 20%;
+}
+
 
 /*---------------------------------------------*/
 

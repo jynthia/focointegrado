@@ -27,7 +27,7 @@
 						Bem-vindo de volta!
 					</span>
                 <div class="wrap-input100 validate-input">
-                    <input id="email" type="text" class="input100 has-val form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required autofocus>
+                    <input id="email" type="text" class="input100 has-val {{ $errors->has('email') ? ' is-invalid' : '' }}" placeholder="Insira seu e-mail" name="email" value="{{ old('email') }}" required autofocus>
 
                     @if ($errors->has('email'))
                         <span class="invalid-feedback" role="alert">
@@ -41,7 +41,7 @@
 
                 <div class="wrap-input100 validate-input">
 
-                        <input id="password" type="password" class="input100 has-val form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
+                        <input id="password" type="password" class="input100 has-val {{ $errors->has('password') ? ' is-invalid' : '' }}" placeholder="Insira sua senha" name="password" required>
 
                         @if ($errors->has('password'))
                             <span class="invalid-feedback" role="alert">
@@ -65,8 +65,8 @@
                     <div class="form-check">
                         <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
 
-                        <label class="form-check-label" for="remember">
-                            {{ __('Remember Me') }}
+                        <label class="form-check-label txt1" for="remember">
+                            {{ __('Lembrar de mim') }}
                         </label>
                     </div>
                 </div>
@@ -80,6 +80,6 @@
                     </form>
             <div class="login100-more">
             </div>
-                </div>
-            </div>
+        </div>
+    </div>
 @stop
