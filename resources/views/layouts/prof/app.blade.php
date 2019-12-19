@@ -38,7 +38,6 @@
                     </span>
                 </a>
             </div>
-            <!-- /Logo -->
             <ul class="nav navbar-top-links navbar-right pull-right">
                 {{--<li>--}}
                     {{--<form role="search" class="app-search hidden-sm hidden-xs m-r-10">--}}
@@ -48,7 +47,7 @@
                 {{--</li>--}}
                 <li>
                     <div class="dropdown show login-out">
-                        <a class="profile-pic dropdown-toggle" role="button" id="dropdownMenuLink" data-toggle="dropdown" href="#"> <img src="{{asset('img/profile.jpg')}}" alt="user-img" width="36" class="img-circle"><b class="hidden-xs">Cinthia<i class="fa fa-caret-down" aria-hidden="true"></i></b></a>
+                        <a class="profile-pic dropdown-toggle" role="button" id="dropdownMenuLink" data-toggle="dropdown" href="#"> <img src="{{asset('img/profile.jpg')}}" alt="user-img" width="36" class="img-circle"><b class="hidden-xs">{{ $dados['professor']->nome }}<i class="fa fa-caret-down" aria-hidden="true"></i></b></a>
                         <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuLink">
                             <li><a class="dropdown-item" href="{{ url('/logout') }}">Sair<i class="fa fa-sign-out" aria-hidden="true"></i></a></li>
                         </ul>

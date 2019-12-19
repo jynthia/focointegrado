@@ -13,6 +13,8 @@ use App\Genero;
 use App\Bioimpedancia;
 use App\TreinoBase;
 use App\Ficha;
+use App\User;
+use Auth;
 
 class PaginasProfessorController extends Controller
 {
@@ -23,7 +25,8 @@ class PaginasProfessorController extends Controller
 
     public function index() {
 
-        $professor = Professor::find(7);
+        $id = Auth::user()->id;
+        $professor = Professor::where('usuario_id', '=', $id)->first();
         $fichas_ativas = $professor->fichas;
         $alunos = $professor->alunos;
         $exercicios = Exercicio::all()->count();
