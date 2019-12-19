@@ -69,8 +69,9 @@ class PaginasProfessorController extends Controller
 
     public function getPerfil() {
 
-        $professor = Professor::find(7);
-        $usuario = $professor->usuario;
+        $id = Auth::user()->id;
+        $professor = Professor::where('usuario_id', '=', $id)->first();
+        $usuario = Auth::user();
 
         $dados = array(
 
@@ -85,7 +86,8 @@ class PaginasProfessorController extends Controller
 
     public function getAtratores() {
 
-        $professor = Professor::find(7);
+        $id = Auth::user()->id;
+        $professor = Professor::where('usuario_id', '=', $id)->first();
         $alunos = $professor->alunos;
         $atratores = Atratores::where('cadastrado_por', $professor->usuario_id)->orderBy('created_at', 'desc')->get();
 
@@ -102,7 +104,8 @@ class PaginasProfessorController extends Controller
 
     public function getBioimpedancia() {
 
-        $professor = Professor::find(7);
+        $id = Auth::user()->id;
+        $professor = Professor::where('usuario_id', '=', $id)->first();
         $alunos = $professor->alunos;
         $bioimpedancias = Bioimpedancia::where('cadastrado_por', $professor->usuario_id)->orderBy('created_at', 'desc')->get();
 
@@ -118,7 +121,8 @@ class PaginasProfessorController extends Controller
     }
 
     public function getFichas() {
-        $professor = Professor::find(7);
+        $id = Auth::user()->id;
+        $professor = Professor::where('usuario_id', '=', $id)->first();
         $alunos = $professor->alunos;
         $fichas_aluno = Ficha::where('cadastrado_por', $professor->usuario_id)->where('grupo_id', NULL)->orderBy('created_at', 'desc')->get();
         $exercicios = Exercicio::all();
@@ -137,7 +141,8 @@ class PaginasProfessorController extends Controller
     }
 
     public function getFichasGrupo() {
-        $professor = Professor::find(7);
+        $id = Auth::user()->id;
+        $professor = Professor::where('usuario_id', '=', $id)->first();
         $grupos = $professor->grupos;
         $exercicios = Exercicio::all();
         $fichas_grupo = Ficha::where('cadastrado_por', $professor->usuario_id)->where('aluno_id', NULL)->orderBy('created_at', 'desc')->get();
