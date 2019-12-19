@@ -12,6 +12,10 @@
 
     <link href="{{asset('css/prof/prof-assets.css')}}" rel="stylesheet">
     <link href="{{asset('css/prof/prof-styles.css')}}" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
 
     {{--<!--[if lt IE 9]>--}}
     {{--<script type="text/javascript" src="{{ asset('https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js') }}"></script>--}}
@@ -28,10 +32,6 @@
             <div class="top-left-part">
                 <!-- Logo -->
                 <a class="logo" href="">
-                    <!-- Logo icon image, you can use font-icon also -->
-                    {{--<b>--}}
-                        {{--<img src="{{ asset('img/admin-logo.png') }}" alt="home" class="light-logo" />--}}
-                    {{--</b>--}}
 
                     <span class="hidden-xs">
                             <img src="{{ asset('img/admin-logo.png') }}" alt="home" class="light-logo" />
@@ -40,17 +40,18 @@
             </div>
             <!-- /Logo -->
             <ul class="nav navbar-top-links navbar-right pull-right">
+                {{--<li>--}}
+                    {{--<form role="search" class="app-search hidden-sm hidden-xs m-r-10">--}}
+                        {{--@csrf--}}
+                        {{--<input type="text" placeholder="Search..." class="form-control"><a href=""><i class="fa fa-search"></i></a>--}}
+                    {{--</form>--}}
+                {{--</li>--}}
                 <li>
-                    <form role="search" class="app-search hidden-sm hidden-xs m-r-10">
-                        <input type="text" placeholder="Search..." class="form-control"> <a href=""><i class="fa fa-search"></i></a> </form>
-                </li>l
-                <li>
-                    <!--TODO: estilizar botao de sair-->
-                    <div class="dropdown show">
-                        <a class="profile-pic dropdown-toggle" role="button" id="dropdownMenuLink" data-toggle="dropdown" href="#"> <img src="{{asset('img/profile.jpg')}}" alt="user-img" width="36" class="img-circle"><b class="hidden-xs">Cinthia</b></a>
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                            <a class="dropdown-item" href="{{ url('/logout') }}">Sair</a>
-                        </div>
+                    <div class="dropdown show login-out">
+                        <a class="profile-pic dropdown-toggle" role="button" id="dropdownMenuLink" data-toggle="dropdown" href="#"> <img src="{{asset('img/profile.jpg')}}" alt="user-img" width="36" class="img-circle"><b class="hidden-xs">Cinthia<i class="fa fa-caret-down" aria-hidden="true"></i></b></a>
+                        <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuLink">
+                            <li><a class="dropdown-item" href="{{ url('/logout') }}">Sair<i class="fa fa-sign-out" aria-hidden="true"></i></a></li>
+                        </ul>
                     </div>
                 </li>
             </ul>

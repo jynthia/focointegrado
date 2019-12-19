@@ -17,6 +17,7 @@
     src: url(../../fonts/bebas_neue/BebasNeue-Regular.otf);
 }
 
+
 .navbar, #nav {
 
     background: #954985;
@@ -41,5 +42,53 @@
     background-image: linear-gradient(#954985, #333333);
     background-image: -ms-linear-gradient(#954985, #333333);
     background-image: -o-linear-gradient(#954985, #333333);
+
+}
+
+.login-out i {
+
+    margin-left: 4px;
+}
+
+.login-out b {
+
+    color: white !important;
+}
+
+.login-out .dropdown-toggle a:hover {
+    text-shadow: 4px 4px 4px black;
+}
+
+.login-out .dropdown-menu>li>a {
+
+    padding-right: 10px;
+    margin: 0;
+}
+
+.login-out .nav .open>a, .nav .open>a:focus, .nav .open>a:hover {
+
+    background: rgba(255,255,255,0) !important;
+}
+
+.login-out .dropdown-menu {
+
+    min-width: fit-content;
+    background-color: rgba(255,255,255,.9);
+    border: none;
+}
+
+.navbar-top-links {
+
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    align-content: center;
+
+}
+
+.navbar-top-links li {
+
+    flex: fit-content;
+    align-self: center;
 
 }
