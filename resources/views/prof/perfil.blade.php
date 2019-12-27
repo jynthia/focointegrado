@@ -24,39 +24,37 @@
 
                                 <!-- TODO: add Modal para trocar de foto -->
                                 <a href="javascript:void(0)"><img src="{{asset('img/profile.jpg')}}" class="thumb-lg img-circle" alt="img"></a>
-                                <h4 class="text-white">{{ $dados['professor']->nome }}</h4>
-                                <h5 class="text-white">{{ $dados['professor']->email }}</h5> </div>
+                                <h4 class="text-white">{{ $dados['usuario']->name }}</h4>
+                                <h5 class="text-white">{{ $dados['usuario']->email }}</h5> </div>
                         </div>
                     </div>
 
                 </div>
             </div>
             <div class="col-md-8 col-xs-12">
+                {{-- TODO: criar validações JS e mensagens de erro --}}
                 <div class="white-box">
-                    <form class="form-horizontal form-material">
+                    <form class="form-horizontal form-material" method="POST" action="{{route('users.update', $dados['usuario'])}}">
+                        @csrf
+                        @method('PATCH')
                         <div class="form-group">
                             <label class="col-md-12">Nome Completo</label>
                             <div class="col-md-12">
-                                <input type="text" value="{{ $dados['professor']->nome }}" class="form-control form-control-line"> </div>
+                                <input type="text" placeholder="Insira novo nome para atualizar" value="{{ $dados['usuario']->name }}" class="form-control form-control-line" name="name" id="name"> </div>
                         </div>
                         <div class="form-group">
                             <label for="example-email" class="col-md-12">E-mail</label>
                             <div class="col-md-12">
-                                <input type="email" value="{{ $dados['professor']->email }}" class="form-control form-control-line" name="example-email" id="example-email"> </div>
+                                <input type="email" placeholder="Insira novo e-mail para atualizar" value="{{ $dados['usuario']->email }}" class="form-control form-control-line" name="email" id="email"> </div>
                         </div>
                         <div class="form-group">
                             <label class="col-md-12">Senha</label>
                             <div class="col-md-12">
-                                <input type="password" value="{{ $dados['usuario']->senha }}" class="form-control form-control-line"> </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="col-md-12">Login</label>
-                            <div class="col-md-12">
-                                <input type="text" value="{{ $dados['usuario']->login }}" class="form-control form-control-line"> </div>
+                                <input type="password" value="" placeholder="Insira nova senha para atualizar" class="form-control form-control-line" name="password" id="password"> </div>
                         </div>
                         <div class="form-group">
                             <div class="col-sm-12">
-                                <button class="btn btn-info">Atualizar perfil</button>
+                                <button type="submit" class="btn btn-info">Atualizar perfil</button>
                             </div>
                         </div>
                     </form>

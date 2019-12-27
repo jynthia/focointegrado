@@ -23,6 +23,8 @@ Route::get('/education', 'PaginasController@education');
 
 Route::get('/prof/', 'PaginasProfessorController@index');
 
+Route::get('prof/perfil', 'PaginasProfessorController@getPerfil');
+
 Route::get('/prof/atratores', 'PaginasProfessorController@getAtratores');
 
 Route::get('/prof/bioimpedancia', 'PaginasProfessorController@getBioimpedancia');
@@ -33,8 +35,6 @@ Route::get('/prof/fichas', 'PaginasProfessorController@getFichas');
 
 Route::get('/prof/fichas_grupo', 'PaginasProfessorController@getFichasGrupo');
 
-Route::get('/prof/perfil', 'PaginasProfessorController@getPerfil');
-
 Route::get('/prof/diarios', 'PaginasProfessorController@getDiarios');
 
 Route::get('/prof/diarios/{id}', 'PaginasProfessorController@getDiariosAluno');
@@ -43,8 +43,9 @@ Route::get('/prof/planejamento', 'PaginasProfessorController@getPlanejamento');
 
 Route::resource('prof/aluno', 'AlunoController');
 
-
+Route::resource('users', 'UserController');
 
 Auth::routes();
 
 Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout');
+

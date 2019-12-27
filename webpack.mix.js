@@ -84,7 +84,8 @@ mix.scripts([
 
 mix.scripts([
     'public/js/prof/custom.min.js',
-    'public/js/prof/dashboard1.js'
+    'public/js/prof/dashboard1.js',
+    'public/js/prof/validation.js'
 ], 'public/js/prof/prof-custom.js');
 
 

@@ -26,6 +26,7 @@ class PaginasProfessorController extends Controller
     public function index() {
 
         $id = Auth::user()->id;
+        $usuario = Auth::user();
         $professor = Professor::where('usuario_id', '=', $id)->first();
         $fichas_ativas = $professor->fichas;
         $alunos = $professor->alunos;
@@ -47,7 +48,8 @@ class PaginasProfessorController extends Controller
             'grupos' => $grupos,
             'titulo' => 'Início',
             'locais_treino' => $locais_treino,
-            'generos' => $generos
+            'generos' => $generos,
+            'usuario' => $usuario
         );
         return view('prof.index')->withDados($dados);
 
@@ -79,7 +81,6 @@ class PaginasProfessorController extends Controller
             'usuario' => $usuario,
             'titulo' => 'Meu Perfil'
         );
-//  TODO: titulo nao ta funcionando
         return view('prof.perfil')->withDados($dados);
 
     }
