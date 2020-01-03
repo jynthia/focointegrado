@@ -99,13 +99,5 @@ $(document).ready(function(){"use strict";var e=$("body");$(function(){$(".prelo
 
     'use strict';
 
-    $("#perfilUpdate").validate({
-        name: "required",
-        email: "email",
-        messages: {
-            required: "Por favor, insira o dado correspondente.",
-            email: "O dado inserido não é um endereço de e-mail válido"
-        }
-    });
 
 })(window, document);
