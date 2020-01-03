@@ -45,6 +45,8 @@ Route::resource('prof/aluno', 'AlunoController');
 
 Route::resource('users', 'UserController');
 
+Route::post('avatar', 'UserController@update_avatar');
+
 Auth::routes();
 
 Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout');
