@@ -33,30 +33,31 @@
             </div>
         @endif
         <div class="row">
-            <div class="col-md-4">
-                <div class="white-box">
-                    <div class="user-bg"><img width="100%" alt="user" src="{{asset('img/profile.jpg')}}">
-                        <div class="overlay-box">
-                            <div class="user-content">
+            {{--<div class="col-md-4">--}}
+                {{--<div class="white-box">--}}
+                    {{--<div class="user-bg"><img width="100%" alt="user" src={{ asset('storage/app/avatars/'.$dados['usuario']->avatar) }}>--}}
+                        {{--<div class="overlay-box">--}}
+                            {{--<div class="user-content">--}}
 
                                 {{--TODO: organizar botoes--}}
-                                <a href="#updateAvatar" data-toggle="collapse"><img src="{{asset('img/profile.jpg')}}" class="thumb-lg img-circle" alt="img"></a>
-                                    <div id="updateAvatar" class="collapse">
-                                            <form action="/avatar" method="post" enctype="multipart/form-data">
-                                                @csrf
-                                                <div class="form-group">
-                                                    <input type="file" class="form-control-file" name="avatar" id="avatarFile" aria-describedby="fileHelp">
-                                                </div>
-                                                <button type="submit" class="btn btn-info">Submit</button>
-                                            </form>
-                                    </div>
-                                <h4 class="text-white">{{ $dados['usuario']->name }}</h4>
-                                <h5 class="text-white">{{ $dados['usuario']->email }}</h5>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+                                {{--TODO: corrigir exibição da imagem --}}
+                                {{--<a href="#updateAvatar" data-toggle="collapse"><img src="{{ asset('storage/app/avatars/'.$dados['usuario']->avatar) }}" class="thumb-lg img-circle" alt="img"></a>--}}
+                                    {{--<div id="updateAvatar" class="collapse">--}}
+                                            {{--<form action="/avatar" method="post" enctype="multipart/form-data">--}}
+                                                {{--@csrf--}}
+                                                {{--<div class="form-group">--}}
+                                                    {{--<input type="file" class="form-control-file" name="avatar" id="avatarFile" aria-describedby="fileHelp">--}}
+                                                {{--</div>--}}
+                                                {{--<button type="submit" class="btn btn-info">Submit</button>--}}
+                                            {{--</form>--}}
+                                    {{--</div>--}}
+                                {{--<h4 class="text-white">{{ $dados['usuario']->name }}</h4>--}}
+                                {{--<h5 class="text-white">{{ $dados['usuario']->email }}</h5>--}}
+                            {{--</div>--}}
+                        {{--</div>--}}
+                    {{--</div>--}}
+                {{--</div>--}}
+            {{--</div>--}}
             <div class="col-md-8 col-xs-12">
                 {{-- TODO: criar validações JS e mensagens de erro --}}
                 <div class="white-box">
